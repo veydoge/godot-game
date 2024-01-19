@@ -1,0 +1,266 @@
+[gd_scene load_steps=21 format=3 uid="uid://bp82bt55e1vtw"]
+
+[ext_resource type="Script" path="res://shop.gd" id="1_lqwkj"]
+[ext_resource type="Texture2D" uid="uid://cuddmvp8wng3n" path="res://flaskBlue.png" id="2_o4nyb"]
+[ext_resource type="Texture2D" uid="uid://bpfn2il3u8rrn" path="res://backgroudShop.jpg" id="2_tlxfe"]
+[ext_resource type="Texture2D" uid="uid://d1y3uvg2hebv4" path="res://flaskGreen.png" id="3_fus7h"]
+[ext_resource type="Texture2D" uid="uid://bx2i00ekk6coh" path="res://flaskPurple.png" id="4_wtmng"]
+[ext_resource type="Texture2D" uid="uid://dx2xg3nb5usbo" path="res://flaskRed.png" id="5_s3hye"]
+[ext_resource type="Texture2D" uid="uid://0sms8sewhbto" path="res://flaskYellow.png" id="6_7cgfi"]
+[ext_resource type="Script" path="res://Cash.gd" id="7_kjd7o"]
+
+[sub_resource type="Animation" id="Animation_l3t6s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -400)]
+}
+
+[sub_resource type="Animation" id="Animation_25ant"]
+resource_name = "TransIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -400), Vector2(0, 100)]
+}
+
+[sub_resource type="Animation" id="Animation_ebdd0"]
+resource_name = "TransOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 100), Vector2(0, 800)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bym5a"]
+_data = {
+"RESET": SubResource("Animation_l3t6s"),
+"TransIn": SubResource("Animation_25ant"),
+"TransOut": SubResource("Animation_ebdd0")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i0y63"]
+texture = ExtResource("2_tlxfe")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gypoi"]
+bg_color = Color(0.831373, 0.117647, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dd6l8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o4nyb")
+}],
+"loop": true,
+"name": &"Голубое зелье",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_7cgfi")
+}],
+"loop": true,
+"name": &"Желтое зелье",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fus7h")
+}],
+"loop": true,
+"name": &"Зеленое зелье",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_s3hye")
+}],
+"loop": true,
+"name": &"Красное зелье",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_wtmng")
+}],
+"loop": true,
+"name": &"Фиолетовое зелье",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u5ddx"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_7vcon"]
+font_size = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ycl55"]
+bg_color = Color(0, 0, 0, 0.403922)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_23fgj"]
+bg_color = Color(0, 0, 0, 0.403922)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvb61"]
+bg_color = Color(0, 0, 0, 0.403922)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="shop" type="CanvasLayer"]
+process_mode = 3
+offset = Vector2(0, -400)
+transform = Transform2D(1, 0, 0, 1, 0, -400)
+script = ExtResource("1_lqwkj")
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Panel")
+libraries = {
+"": SubResource("AnimationLibrary_bym5a")
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = -1
+anchor_left = 0.007
+anchor_top = 0.605
+anchor_right = 0.007
+anchor_bottom = 0.605
+offset_left = 147.936
+offset_top = -448.04
+offset_right = 1015.94
+offset_bottom = 7.95999
+theme_override_styles/panel = SubResource("StyleBoxTexture_i0y63")
+
+[node name="Closebtn" type="Button" parent="."]
+anchors_preset = -1
+anchor_top = -0.154
+anchor_bottom = -0.154
+offset_left = 944.0
+offset_top = 56.792
+offset_right = 1010.0
+offset_bottom = 87.792
+theme_override_styles/normal = SubResource("StyleBoxFlat_gypoi")
+text = "Х"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimSprite" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(577, 158)
+scale = Vector2(1, 1.03125)
+sprite_frames = SubResource("SpriteFrames_dd6l8")
+animation = &"Фиолетовое зелье"
+
+[node name="Name" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 32.0
+offset_right = 667.0
+offset_bottom = 80.0
+label_settings = SubResource("LabelSettings_u5ddx")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Des" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 206.0
+offset_right = 787.0
+offset_bottom = 261.0
+text = "Для ..."
+label_settings = SubResource("LabelSettings_7vcon")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Next" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 679.0
+offset_top = 141.0
+offset_right = 724.0
+offset_bottom = 203.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_ycl55")
+text = ">"
+
+[node name="Prev" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 435.0
+offset_top = 141.0
+offset_right = 479.0
+offset_bottom = 202.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_23fgj")
+text = "<"
+
+[node name="Buy" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 516.0
+offset_top = 278.0
+offset_right = 648.0
+offset_bottom = 331.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_fvb61")
+text = "Купить"
+
+[node name="Cash" type="Label" parent="."]
+offset_left = 795.0
+offset_top = 351.0
+offset_right = 998.0
+offset_bottom = 396.0
+theme_override_font_sizes/font_size = 20
+text = "Монет: "
+script = ExtResource("7_kjd7o")
+
+[node name="Error" type="Label" parent="."]
+offset_left = 449.0
+offset_top = -40.0
+offset_right = 711.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(0.639216, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Closebtn" to="." method="_on_closebtn_pressed"]
+[connection signal="pressed" from="Control/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Control/Prev" to="." method="_on_prev_pressed"]
+[connection signal="pressed" from="Control/Buy" to="." method="_on_buy_pressed"]

@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://bsy4xbbfek3j2"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_h8ui6"]
+[ext_resource type="Texture2D" uid="uid://dgbec205ba7jp" path="res://jump-Sheet.png" id="2_q7rox"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbl2x"]
+atlas = ExtResource("2_q7rox")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avwwp"]
+atlas = ExtResource("2_q7rox")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vt3jj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbl2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avwwp")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2pa7u"]
+radius = 60.407
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ethk"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4vj2u"]
+radius = 11.0
+
+[node name="enemy" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_h8ui6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(0.250001, -9.53674e-07)
+scale = Vector2(0.121094, 0.109375)
+sprite_frames = SubResource("SpriteFrames_vt3jj")
+animation = &"jump"
+
+[node name="detection_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+shape = SubResource("CircleShape2D_2pa7u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_8ethk")
+
+[node name="enemy_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_4vj2u")
+
+[node name="take_damage_cooldown" type="Timer" parent="."]
+
+[node name="healthBar" type="ProgressBar" parent="."]
+offset_left = -7.0
+offset_top = 6.0
+offset_right = 18.0
+offset_bottom = 10.0
+scale = Vector2(0.5, 0.5)
+show_percentage = false
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+navigation_layers = 3
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
+[connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
+[connection signal="timeout" from="take_damage_cooldown" to="." method="_on_take_damage_cooldown_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

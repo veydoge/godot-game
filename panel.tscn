@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlj3bqoocs802"]
+
+[ext_resource type="Script" path="res://panel.gd" id="1_f8t3k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_upa0w"]
+bg_color = Color(0.0980392, 0.00392157, 0.164706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86cky"]
+bg_color = Color(0.568627, 0.133333, 0.286275, 0.592157)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Panel" type="Panel"]
+light_mask = 3
+visibility_layer = 3
+offset_right = 1152.0
+offset_bottom = 651.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_upa0w")
+script = ExtResource("1_f8t3k")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 221.0
+offset_right = 1005.0
+offset_bottom = 429.0
+theme_override_colors/font_color = Color(1, 0, 0.360784, 1)
+theme_override_font_sizes/font_size = 50
+text = "YOU ARE DEAD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 433.0
+offset_right = 661.0
+offset_bottom = 503.0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_86cky")
+text = "Сначала"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
