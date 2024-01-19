@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="testify"
-run/main_scene="res://Node2D.tscn"
+run/main_scene="res://Node2D_sofa.tscn"
 config/features=PackedStringArray("4.1", "C#")
 config/icon="res://icon.png"
 
 [autoload]
 
-World="*res://Node2D.gd"
+World="*res://Node2D_sofa.gd"
 Global="*res://Global.gd"
 SaveCoins="*res://SaveCoins.gd"
 
