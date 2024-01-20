@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dodke3emyt7xy"]
 
 [ext_resource type="Script" path="res://inventory_gui.gd" id="1_4g7t6"]
-[ext_resource type="Texture2D" uid="uid://dmjtk2r5trbfq" path="res://assets/inventory/Inventory_9Slices.png" id="1_xnqvq"]
+[ext_resource type="Texture2D" uid="uid://dmjtk2r5trbfq" path="res://assets/inventory/icons/Inventory_9Slices.png" id="1_xnqvq"]
 
 [node name="InventoryGUI" type="Control"]
 layout_mode = 3

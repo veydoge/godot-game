@@ -1,6 +1,14 @@
-extends "res://collectable.gd"
+extends "res://classes/collectable.gd"
 
+func _on_body_entered(body):
+	if body.name == "Player":
+		isPlayerNear = true
 
-# Called when the node enters the scene tree for the first time.
-func collect(inventory: Inventory):
-	super(inventory)
+func _on_body_exited(body):
+	if body.name == "Player":
+		isPlayerNear = false
+
+func _input(event):
+	if event.is_action_pressed("take"):
+		if isPlayerNear:
+			super.collect()

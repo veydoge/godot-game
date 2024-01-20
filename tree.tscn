@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://mata51t650ff"]
+
+[ext_resource type="Texture2D" uid="uid://c5bb15awmg2jg" path="res://assets/inventory/icons/tree.png" id="1_fnqhm"]
+[ext_resource type="Script" path="res://tree.gd" id="1_onrd7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58fum"]
+size = Vector2(70, 70)
+
+[node name="Tree" type="Area2D"]
+script = ExtResource("1_onrd7")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_58fum")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-9.53674e-07, -4.76837e-07)
+scale = Vector2(0.330426, 0.384766)
+texture = ExtResource("1_fnqhm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

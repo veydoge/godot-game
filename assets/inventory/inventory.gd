@@ -4,8 +4,9 @@ class_name Inventory
 
 signal updated
 
-@export var slots : Array[InventorySlot]	
+@export var slots : Array[InventorySlot]
 
+var current_slot: InventorySlot
 
 func insert(item: InventoryItem):
 	var itemSlots = slots.filter(func(slot): return slot.item == item)
@@ -16,7 +17,10 @@ func insert(item: InventoryItem):
 		if !emptySlots.is_empty():
 			emptySlots[0].item = item
 			emptySlots[0].amount = 1
-		
 	updated.emit()
-	
-		
+
+func get_current_slot():
+	return current_slot
+
+func update_current_slot(slot: InventorySlot):
+	current_slot = slot

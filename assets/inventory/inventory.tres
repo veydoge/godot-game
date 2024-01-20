@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=19 format=3 uid="uid://81gov05ovedi"]
+[gd_resource type="Resource" script_class="Inventory" load_steps=20 format=3 uid="uid://81gov05ovedi"]
 
 [ext_resource type="Resource" uid="uid://c0vindenac7es" path="res://assets/inventory/axe.tres" id="1_u0wwp"]
 [ext_resource type="Script" path="res://InventorySlot.gd" id="2_dm4qr"]
 [ext_resource type="Script" path="res://assets/inventory/inventory.gd" id="3_qqr6t"]
+[ext_resource type="Resource" uid="uid://d2bcjqygxdagw" path="res://assets/inventory/pickaxe.tres" id="4_3rtlb"]
 
 [sub_resource type="Resource" id="Resource_ts76p"]
 script = ExtResource("2_dm4qr")
@@ -11,7 +12,8 @@ amount = 1
 
 [sub_resource type="Resource" id="Resource_v8tqh"]
 script = ExtResource("2_dm4qr")
-amount = 0
+item = ExtResource("4_3rtlb")
+amount = 1
 
 [sub_resource type="Resource" id="Resource_3uqjh"]
 script = ExtResource("2_dm4qr")

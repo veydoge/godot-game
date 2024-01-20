@@ -11,7 +11,7 @@ func update(slot: InventorySlot):
 	else:
 		amountlabel.text = str(slot.amount)
 		amountlabel.visible = true
-
+		
 		itemsprite.visible = true
 		itemsprite.texture = slot.item.texture
 

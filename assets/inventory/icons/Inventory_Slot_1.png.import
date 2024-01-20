@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqytihyyiwdv1"
-path="res://.godot/imported/tile161.png-84bb53d699de4b40d8d4a3b658bb52e3.ctex"
+uid="uid://dboed75ndharp"
+path="res://.godot/imported/Inventory_Slot_1.png-e13087b4179c0794961fc07b51399ad8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tile161.png"
-dest_files=["res://.godot/imported/tile161.png-84bb53d699de4b40d8d4a3b658bb52e3.ctex"]
+source_file="res://assets/inventory/icons/Inventory_Slot_1.png"
+dest_files=["res://.godot/imported/Inventory_Slot_1.png-e13087b4179c0794961fc07b51399ad8.ctex"]
 
 [params]
 
