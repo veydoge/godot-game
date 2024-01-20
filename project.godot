@@ -19,7 +19,6 @@ config/icon="res://icon.png"
 
 Global="*res://Global.gd"
 SaveCoins="*res://SaveCoins.gd"
-World="*res://Node2D_sofa.gd"
 
 [display]
 

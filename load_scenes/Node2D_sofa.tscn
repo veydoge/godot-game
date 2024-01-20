@@ -1,12 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dp1pi6eubd7sh"]
+[gd_scene load_steps=9 format=3 uid="uid://dp1pi6eubd7sh"]
 
 [ext_resource type="TileSet" uid="uid://chch7qij7mj4j" path="res://summertileset.tres" id="1_6vgqx"]
 [ext_resource type="Script" path="res://Node2D_sofa.gd" id="1_n5n6c"]
 [ext_resource type="PackedScene" uid="uid://1m5kh5r6qrxw" path="res://player_sofa.tscn" id="4_rkwjr"]
-[ext_resource type="PackedScene" path="res://enemy.tscn" id="5_2pm0o"]
+[ext_resource type="PackedScene" uid="uid://bsy4xbbfek3j2" path="res://enemy.tscn" id="5_2pm0o"]
 [ext_resource type="Texture2D" uid="uid://c1c3vfbdx6mch" path="res://прилавок.png" id="6_ja1s2"]
-[ext_resource type="PackedScene" path="res://shop.tscn" id="7_jxqxq"]
-[ext_resource type="PackedScene" uid="uid://cjbxmqcb2cuta" path="res://panel.tscn" id="7_kuy7f"]
+[ext_resource type="PackedScene" uid="uid://bp82bt55e1vtw" path="res://shop.tscn" id="7_jxqxq"]
 
 [sub_resource type="GDScript" id="GDScript_2laos"]
 script/source = "extends Area2D
@@ -41,9 +40,6 @@ size = Vector2(29, 20)
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_n5n6c")
-
-[node name="Panel" parent="." instance=ExtResource("7_kuy7f")]
-visible = false
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
