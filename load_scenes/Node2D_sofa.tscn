@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Node2D_sofa.gd" id="1_n5n6c"]
 [ext_resource type="PackedScene" uid="uid://1m5kh5r6qrxw" path="res://player_sofa.tscn" id="4_rkwjr"]
 [ext_resource type="PackedScene" uid="uid://bsy4xbbfek3j2" path="res://enemy.tscn" id="5_2pm0o"]
-[ext_resource type="Texture2D" uid="uid://c1c3vfbdx6mch" path="res://прилавок.png" id="6_ja1s2"]
+[ext_resource type="Texture2D" uid="uid://c1c3vfbdx6mch" path="res://sprite/прилавок.png" id="6_ja1s2"]
 [ext_resource type="PackedScene" uid="uid://bp82bt55e1vtw" path="res://shop.tscn" id="7_jxqxq"]
 
 [sub_resource type="GDScript" id="GDScript_2laos"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1u0d7wbte2qx"]
+[gd_scene load_steps=7 format=3 uid="uid://bp63igx0y7i65"]
 
 [ext_resource type="TileSet" uid="uid://chch7qij7mj4j" path="res://summertileset.tres" id="1_6vgqx"]
 [ext_resource type="Script" path="res://World.gd" id="1_u11ad"]

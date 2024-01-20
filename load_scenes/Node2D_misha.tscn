@@ -1,19 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1u0d7wbte2qx"]
+[gd_scene load_steps=8 format=3 uid="uid://cpssq7tl0r1y7"]
 
-[ext_resource type="Script" path="res://World.gd" id="1_efgij"]
-[ext_resource type="TileSet" uid="uid://chch7qij7mj4j" path="res://summertileset.tres" id="2_i6y5i"]
-[ext_resource type="PackedScene" uid="uid://mrd02wmp5bsa" path="res://player.tscn" id="3_1cbqv"]
-[ext_resource type="Script" path="res://CanvasLayer.gd" id="4_ffxg0"]
-[ext_resource type="PackedScene" uid="uid://dodke3emyt7xy" path="res://inventory_gui.tscn" id="5_yl5bb"]
-[ext_resource type="PackedScene" uid="uid://b1ifmfx2liswj" path="res://item_slot.tscn" id="6_5rndn"]
-[ext_resource type="PackedScene" uid="uid://dxnnrv23pfecc" path="res://bottom_inventory_gui.tscn" id="7_1g681"]
+[ext_resource type="Script" path="res://World.gd" id="1_pk1k7"]
+[ext_resource type="TileSet" uid="uid://chch7qij7mj4j" path="res://summertileset.tres" id="2_1kvnl"]
+[ext_resource type="PackedScene" uid="uid://mrd02wmp5bsa" path="res://player.tscn" id="3_2rb2m"]
+[ext_resource type="Script" path="res://CanvasLayer.gd" id="4_4iteh"]
+[ext_resource type="PackedScene" uid="uid://dodke3emyt7xy" path="res://inventory_gui.tscn" id="5_7rtr6"]
+[ext_resource type="PackedScene" uid="uid://b1ifmfx2liswj" path="res://item_slot.tscn" id="6_7pu08"]
+[ext_resource type="PackedScene" uid="uid://dxnnrv23pfecc" path="res://bottom_inventory_gui.tscn" id="7_cq3mc"]
 
 [node name="World" type="Node2D"]
-script = ExtResource("1_efgij")
+script = ExtResource("1_pk1k7")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
-tile_set = ExtResource("2_i6y5i")
+tile_set = ExtResource("2_1kvnl")
 cell_quadrant_size = 32
 format = 2
 layer_0/name = "first"
@@ -28,13 +28,14 @@ layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(2097194, 9, 0, 2097198, 9, 0, 1703977, 1, 65536, 1703983, 1, 65536, 1835052, 1, 65536, 1638436, 1, 65536, 1966116, 1, 65536, 2293813, 2, 65536, 1245236, 2, 65536, 1245215, 2, 65536, 2359325, 2, 65536, 1245221, 2, 131072, 1245229, 2, 131072, 2424868, 2, 131072, 2424876, 2, 131072)
 metadata/_edit_group_ = true
 
-[node name="Player" parent="." instance=ExtResource("3_1cbqv")]
+[node name="Player" parent="." instance=ExtResource("3_2rb2m")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
-script = ExtResource("4_ffxg0")
+script = ExtResource("4_4iteh")
 
-[node name="InventoryGUI" parent="CanvasLayer" instance=ExtResource("5_yl5bb")]
+[node name="InventoryGUI" parent="CanvasLayer" instance=ExtResource("5_7rtr6")]
+visible = false
 offset_left = -92.0
 offset_top = -56.0
 offset_right = 92.0
@@ -48,54 +49,54 @@ offset_right = 180.0
 offset_bottom = 109.0
 columns = 5
 
-[node name="ItemSlot" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_5rndn")]
+[node name="ItemSlot" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
 layout_mode = 2
 
-[node name="ItemSlot2" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_5rndn")]
+[node name="ItemSlot2" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
 layout_mode = 2
 
-[node name="ItemSlot3" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_5rndn")]
+[node name="ItemSlot3" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
 layout_mode = 2
 
-[node name="ItemSlot4" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_5rndn")]
+[node name="ItemSlot4" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
 layout_mode = 2
 
-[node name="ItemSlot5" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_5rndn")]
+[node name="ItemSlot5" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
 layout_mode = 2
 
-[node name="ItemSlot6" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_5rndn")]
+[node name="ItemSlot6" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
 layout_mode = 2
 
-[node name="ItemSlot7" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_5rndn")]
+[node name="ItemSlot7" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
 layout_mode = 2
 
-[node name="ItemSlot8" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_5rndn")]
+[node name="ItemSlot8" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
 layout_mode = 2
 
-[node name="ItemSlot9" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_5rndn")]
+[node name="ItemSlot9" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
 layout_mode = 2
 
-[node name="ItemSlot10" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_5rndn")]
+[node name="ItemSlot10" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
 layout_mode = 2
 
-[node name="ItemSlot11" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_5rndn")]
+[node name="ItemSlot11" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
 layout_mode = 2
 
-[node name="ItemSlot12" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_5rndn")]
+[node name="ItemSlot12" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
 layout_mode = 2
 
-[node name="ItemSlot13" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_5rndn")]
+[node name="ItemSlot13" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
 layout_mode = 2
 
-[node name="ItemSlot14" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_5rndn")]
+[node name="ItemSlot14" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
 layout_mode = 2
 
-[node name="ItemSlot15" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_5rndn")]
+[node name="ItemSlot15" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
 layout_mode = 2
 
 [node name="BottomInventory" type="CanvasLayer" parent="."]
 
-[node name="BottomInventoryGUI" parent="BottomInventory" instance=ExtResource("7_1g681")]
+[node name="BottomInventoryGUI" parent="BottomInventory" instance=ExtResource("7_cq3mc")]
 
 [node name="GridContainer" type="GridContainer" parent="BottomInventory/BottomInventoryGUI"]
 layout_mode = 0
@@ -105,20 +106,46 @@ offset_right = 267.0
 offset_bottom = 179.0
 columns = 5
 
-[node name="ItemSlot" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("6_5rndn")]
+[node name="ItemSlot" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
 layout_mode = 2
 
-[node name="ItemSlot2" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("6_5rndn")]
+[node name="ItemSlot2" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
 layout_mode = 2
 
-[node name="ItemSlot3" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("6_5rndn")]
+[node name="ItemSlot3" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
 layout_mode = 2
 
-[node name="ItemSlot4" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("6_5rndn")]
+[node name="ItemSlot4" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
 layout_mode = 2
 
-[node name="ItemSlot5" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("6_5rndn")]
+[node name="ItemSlot5" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
 layout_mode = 2
 
+[connection signal="body_entered" from="TileMap/@Area2D@22555" to="TileMap/@Area2D@22555" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="TileMap/@Area2D@22555" to="TileMap/@Area2D@22555" method="_on_body_exited" flags=18]
+[connection signal="body_entered" from="TileMap/@Area2D@22556" to="TileMap/@Area2D@22556" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="TileMap/@Area2D@22556" to="TileMap/@Area2D@22556" method="_on_body_exited" flags=18]
+[connection signal="body_entered" from="TileMap/@Area2D@22557" to="TileMap/@Area2D@22557" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="TileMap/@Area2D@22557" to="TileMap/@Area2D@22557" method="_on_body_exited" flags=18]
+[connection signal="body_entered" from="TileMap/@Area2D@22558" to="TileMap/@Area2D@22558" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="TileMap/@Area2D@22558" to="TileMap/@Area2D@22558" method="_on_body_exited" flags=18]
+[connection signal="body_entered" from="TileMap/@Area2D@22559" to="TileMap/@Area2D@22559" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="TileMap/@Area2D@22559" to="TileMap/@Area2D@22559" method="_on_body_exited" flags=18]
+[connection signal="body_entered" from="TileMap/@Area2D@22560" to="TileMap/@Area2D@22560" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="TileMap/@Area2D@22560" to="TileMap/@Area2D@22560" method="_on_body_exited" flags=18]
+[connection signal="body_entered" from="TileMap/@Area2D@22561" to="TileMap/@Area2D@22561" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="TileMap/@Area2D@22561" to="TileMap/@Area2D@22561" method="_on_body_exited" flags=18]
+[connection signal="body_entered" from="TileMap/@Area2D@22562" to="TileMap/@Area2D@22562" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="TileMap/@Area2D@22562" to="TileMap/@Area2D@22562" method="_on_body_exited" flags=18]
+[connection signal="body_entered" from="TileMap/@Area2D@22563" to="TileMap/@Area2D@22563" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="TileMap/@Area2D@22563" to="TileMap/@Area2D@22563" method="_on_body_exited" flags=18]
+[connection signal="body_entered" from="TileMap/@Area2D@22564" to="TileMap/@Area2D@22564" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="TileMap/@Area2D@22564" to="TileMap/@Area2D@22564" method="_on_body_exited" flags=18]
+[connection signal="body_entered" from="TileMap/@Area2D@22565" to="TileMap/@Area2D@22565" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="TileMap/@Area2D@22565" to="TileMap/@Area2D@22565" method="_on_body_exited" flags=18]
+[connection signal="body_entered" from="TileMap/@Area2D@22566" to="TileMap/@Area2D@22566" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="TileMap/@Area2D@22566" to="TileMap/@Area2D@22566" method="_on_body_exited" flags=18]
+[connection signal="body_entered" from="TileMap/@Area2D@22567" to="TileMap/@Area2D@22567" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="TileMap/@Area2D@22567" to="TileMap/@Area2D@22567" method="_on_body_exited" flags=18]
 [connection signal="closed" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_opened"]
