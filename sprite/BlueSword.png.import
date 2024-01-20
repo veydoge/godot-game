@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cimt3odesapfo"
-path="res://.godot/imported/Untitled.png-bc2281595504051164e5975696e7a31f.ctex"
+uid="uid://buh8hoi50qxmq"
+path="res://.godot/imported/BlueSword.png-38d16327f3983a80147f618eefbd4980.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/Untitled.png"
-dest_files=["res://.godot/imported/Untitled.png-bc2281595504051164e5975696e7a31f.ctex"]
+source_file="res://sprite/BlueSword.png"
+dest_files=["res://.godot/imported/BlueSword.png-38d16327f3983a80147f618eefbd4980.ctex"]
 
 [params]
 

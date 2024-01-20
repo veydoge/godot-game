@@ -1,12 +1,12 @@
 [gd_scene load_steps=21 format=3 uid="uid://bp82bt55e1vtw"]
 
 [ext_resource type="Script" path="res://shop.gd" id="1_lqwkj"]
-[ext_resource type="Texture2D" uid="uid://cuddmvp8wng3n" path="res://flaskBlue.png" id="2_o4nyb"]
+[ext_resource type="Texture2D" uid="uid://cuddmvp8wng3n" path="res://sprite/flasks/flaskBlue.png" id="2_o4nyb"]
 [ext_resource type="Texture2D" uid="uid://bpfn2il3u8rrn" path="res://backgroudShop.jpg" id="2_tlxfe"]
-[ext_resource type="Texture2D" uid="uid://d1y3uvg2hebv4" path="res://flaskGreen.png" id="3_fus7h"]
-[ext_resource type="Texture2D" uid="uid://bx2i00ekk6coh" path="res://flaskPurple.png" id="4_wtmng"]
-[ext_resource type="Texture2D" uid="uid://dx2xg3nb5usbo" path="res://flaskRed.png" id="5_s3hye"]
-[ext_resource type="Texture2D" uid="uid://0sms8sewhbto" path="res://flaskYellow.png" id="6_7cgfi"]
+[ext_resource type="Texture2D" uid="uid://d1y3uvg2hebv4" path="res://sprite/flasks/flaskGreen.png" id="3_fus7h"]
+[ext_resource type="Texture2D" uid="uid://bx2i00ekk6coh" path="res://sprite/flasks/flaskPurple.png" id="4_wtmng"]
+[ext_resource type="Texture2D" uid="uid://dx2xg3nb5usbo" path="res://sprite/flasks/flaskRed.png" id="5_s3hye"]
+[ext_resource type="Texture2D" uid="uid://0sms8sewhbto" path="res://sprite/flasks/flaskYellow.png" id="6_7cgfi"]
 [ext_resource type="Script" path="res://Cash.gd" id="7_kjd7o"]
 
 [sub_resource type="Animation" id="Animation_l3t6s"]

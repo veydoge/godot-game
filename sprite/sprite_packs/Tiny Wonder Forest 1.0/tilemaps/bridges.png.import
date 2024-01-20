@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cimt3odesapfo"
-path="res://.godot/imported/Untitled.png-bc2281595504051164e5975696e7a31f.ctex"
+uid="uid://b2lt0gm4h4xxw"
+path="res://.godot/imported/bridges.png-fa15f19dc4ccb11c43d77a1cd787eb5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/Untitled.png"
-dest_files=["res://.godot/imported/Untitled.png-bc2281595504051164e5975696e7a31f.ctex"]
+source_file="res://sprite/sprite_packs/Tiny Wonder Forest 1.0/tilemaps/bridges.png"
+dest_files=["res://.godot/imported/bridges.png-fa15f19dc4ccb11c43d77a1cd787eb5a.ctex"]
 
 [params]
 

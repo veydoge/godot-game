@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cimt3odesapfo"
-path="res://.godot/imported/Untitled.png-bc2281595504051164e5975696e7a31f.ctex"
+uid="uid://dvfwe6yi4s4a3"
+path="res://.godot/imported/portrait male.png-18c26ee1e3c2718b4b99ee0d2b66330c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/Untitled.png"
-dest_files=["res://.godot/imported/Untitled.png-bc2281595504051164e5975696e7a31f.ctex"]
+source_file="res://sprite/sprite_packs/Tiny Wonder Forest 1.0/characters/main character old/portrait male.png"
+dest_files=["res://.godot/imported/portrait male.png-18c26ee1e3c2718b4b99ee0d2b66330c.ctex"]
 
 [params]
 

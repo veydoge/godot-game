@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cimt3odesapfo"
-path="res://.godot/imported/Untitled.png-bc2281595504051164e5975696e7a31f.ctex"
+uid="uid://cuddmvp8wng3n"
+path="res://.godot/imported/flaskBlue.png-f36906524e2f4012b0e5c267d2d13969.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/Untitled.png"
-dest_files=["res://.godot/imported/Untitled.png-bc2281595504051164e5975696e7a31f.ctex"]
+source_file="res://sprite/flasks/flaskBlue.png"
+dest_files=["res://.godot/imported/flaskBlue.png-f36906524e2f4012b0e5c267d2d13969.ctex"]
 
 [params]
 

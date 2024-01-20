@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://mrd02wmp5bsa"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_nnwnc"]
-[ext_resource type="Texture2D" uid="uid://u7a2qo3yi0sq" path="res://Tiny Wonder Forest 1.0/characters/main character/walk and idle.png" id="3_lkvw3"]
+[ext_resource type="Texture2D" uid="uid://u7a2qo3yi0sq" path="res://sprite/sprite_packs/Tiny Wonder Forest 1.0/characters/main character/walk and idle.png" id="3_lkvw3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onlx0"]
 atlas = ExtResource("3_lkvw3")

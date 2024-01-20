@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cimt3odesapfo"
-path="res://.godot/imported/Untitled.png-bc2281595504051164e5975696e7a31f.ctex"
+uid="uid://cd24ejaugth5a"
+path="res://.godot/imported/summer and spring items.png-69d9819f62a37fa7bfb14aaed121bada.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/Untitled.png"
-dest_files=["res://.godot/imported/Untitled.png-bc2281595504051164e5975696e7a31f.ctex"]
+source_file="res://sprite/sprite_packs/Tiny Wonder Forest 1.0/items&objects/summer and spring items.png"
+dest_files=["res://.godot/imported/summer and spring items.png-69d9819f62a37fa7bfb14aaed121bada.ctex"]
 
 [params]
 

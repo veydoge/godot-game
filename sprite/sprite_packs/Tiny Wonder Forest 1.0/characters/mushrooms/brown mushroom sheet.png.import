@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cimt3odesapfo"
-path="res://.godot/imported/Untitled.png-bc2281595504051164e5975696e7a31f.ctex"
+uid="uid://d18woi4iwyrj7"
+path="res://.godot/imported/brown mushroom sheet.png-ac3ed87fe0cf94ca44e01e2ffd8ad52d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/Untitled.png"
-dest_files=["res://.godot/imported/Untitled.png-bc2281595504051164e5975696e7a31f.ctex"]
+source_file="res://sprite/sprite_packs/Tiny Wonder Forest 1.0/characters/mushrooms/brown mushroom sheet.png"
+dest_files=["res://.godot/imported/brown mushroom sheet.png-ac3ed87fe0cf94ca44e01e2ffd8ad52d.ctex"]
 
 [params]
 

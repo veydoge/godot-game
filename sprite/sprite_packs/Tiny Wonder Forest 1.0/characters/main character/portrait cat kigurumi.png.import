@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cimt3odesapfo"
-path="res://.godot/imported/Untitled.png-bc2281595504051164e5975696e7a31f.ctex"
+uid="uid://d3d5fyqlx4ngi"
+path="res://.godot/imported/portrait cat kigurumi.png-99a44e33d9bbc7c07ce94ace112a8762.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/Untitled.png"
-dest_files=["res://.godot/imported/Untitled.png-bc2281595504051164e5975696e7a31f.ctex"]
+source_file="res://sprite/sprite_packs/Tiny Wonder Forest 1.0/characters/main character/portrait cat kigurumi.png"
+dest_files=["res://.godot/imported/portrait cat kigurumi.png-99a44e33d9bbc7c07ce94ace112a8762.ctex"]
 
 [params]
 

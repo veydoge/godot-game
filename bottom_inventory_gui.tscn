@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dxnnrv23pfecc"]
 
-[ext_resource type="Texture2D" uid="uid://6knhmwjhodrb" path="res://Inventory_9Slices.png" id="1_drs81"]
+[ext_resource type="Texture2D" uid="uid://6knhmwjhodrb" path="res://sprite/Inventory_9Slices.png" id="1_drs81"]
 [ext_resource type="Script" path="res://BottomInventoryGUI.gd" id="1_xp0jv"]
 
 [node name="BottomInventoryGUI" type="Control"]

@@ -1,14 +1,19 @@
-[gd_resource type="TileSet" load_steps=12 format=3 uid="uid://chch7qij7mj4j"]
+[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://chch7qij7mj4j"]
 
 [ext_resource type="PackedScene" uid="uid://diui1glh7duqx" path="res://tomato.tscn" id="1_hj21b"]
-[ext_resource type="Texture2D" uid="uid://c0dyfo2pcw20h" path="res://Tiny Wonder Forest 1.0/tilemaps/summer tilemap.png" id="1_xb5kq"]
-[ext_resource type="Texture2D" uid="uid://bau2wq7kkknxk" path="res://ezgif-2-2fb7504e2b.png" id="2_35sjy"]
+[ext_resource type="Texture2D" uid="uid://bau2wq7kkknxk" path="res://sprite/ezgif-2-2fb7504e2b.png" id="2_35sjy"]
 [ext_resource type="PackedScene" uid="uid://s41s1r34hdlc" path="res://stone.tscn" id="3_rwl7v"]
 [ext_resource type="PackedScene" uid="uid://mata51t650ff" path="res://tree.tscn" id="3_ttjdw"]
+[ext_resource type="Texture2D" uid="uid://c0dyfo2pcw20h" path="res://sprite/sprite_packs/Tiny Wonder Forest 1.0/tilemaps/summer tilemap.png" id="4_03k0m"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_etxes"]
 resource_name = "Collectables"
 scenes/1/scene = ExtResource("1_hj21b")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_kjlt1"]
+resource_name = "Destroyables"
+scenes/1/scene = ExtResource("3_ttjdw")
+scenes/2/scene = ExtResource("3_rwl7v")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_rg4yb"]
 vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -25,13 +30,8 @@ vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_kjlt1"]
-resource_name = "Destroyables"
-scenes/1/scene = ExtResource("3_ttjdw")
-scenes/2/scene = ExtResource("3_rwl7v")
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8cqy2"]
-texture = ExtResource("1_xb5kq")
+texture = ExtResource("4_03k0m")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0

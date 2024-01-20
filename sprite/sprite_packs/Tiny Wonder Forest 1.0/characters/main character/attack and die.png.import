@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cimt3odesapfo"
-path="res://.godot/imported/Untitled.png-bc2281595504051164e5975696e7a31f.ctex"
+uid="uid://dmqt184p8mnbf"
+path="res://.godot/imported/attack and die.png-157d4ffcf61d5c7f4b698ef324cd4ca5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/Untitled.png"
-dest_files=["res://.godot/imported/Untitled.png-bc2281595504051164e5975696e7a31f.ctex"]
+source_file="res://sprite/sprite_packs/Tiny Wonder Forest 1.0/characters/main character/attack and die.png"
+dest_files=["res://.godot/imported/attack and die.png-157d4ffcf61d5c7f4b698ef324cd4ca5.ctex"]
 
 [params]
 

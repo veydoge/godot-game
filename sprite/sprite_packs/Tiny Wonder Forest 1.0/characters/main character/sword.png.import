@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cimt3odesapfo"
-path="res://.godot/imported/Untitled.png-bc2281595504051164e5975696e7a31f.ctex"
+uid="uid://ckjvnrcikma7t"
+path="res://.godot/imported/sword.png-dd87037cca0d8b12ee6f25e80c3765a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/Untitled.png"
-dest_files=["res://.godot/imported/Untitled.png-bc2281595504051164e5975696e7a31f.ctex"]
+source_file="res://sprite/sprite_packs/Tiny Wonder Forest 1.0/characters/main character/sword.png"
+dest_files=["res://.godot/imported/sword.png-dd87037cca0d8b12ee6f25e80c3765a2.ctex"]
 
 [params]
 

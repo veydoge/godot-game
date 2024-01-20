@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cimt3odesapfo"
-path="res://.godot/imported/Untitled.png-bc2281595504051164e5975696e7a31f.ctex"
+uid="uid://cihhfdufom4gb"
+path="res://.godot/imported/cat kigurumi attack and die.png-36aa559131fd11c159f40afe43e4fa1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprite/Untitled.png"
-dest_files=["res://.godot/imported/Untitled.png-bc2281595504051164e5975696e7a31f.ctex"]
+source_file="res://sprite/sprite_packs/Tiny Wonder Forest 1.0/characters/main character old/cat kigurumi attack and die.png"
+dest_files=["res://.godot/imported/cat kigurumi attack and die.png-36aa559131fd11c159f40afe43e4fa1e.ctex"]
 
 [params]
 
