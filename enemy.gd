@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 var speed = 60.0
 @onready var animations = $AnimatedSprite2D
 @onready var nav = $NavigationAgent2D as NavigationAgent2D
@@ -30,7 +29,6 @@ func _physics_process(delta):
 	if dead:
 		$detection_area/CollisionShape2D.disabled = true
 	
-
 func _on_timer_timeout():
 	nav.target_position = pl.global_position
 
@@ -53,9 +51,9 @@ func _on_enemy_hitbox_body_entered(body):
 func _on_enemy_hitbox_body_exited(body):
 	if body.has_method("player"):
 		player_inattack_zone = false
-		
+
 func deal_with_damage():
-	if player_inattack_zone and World.player_current_attack == true :
+	if player_inattack_zone and pl.player_current_attack == true:
 		if can_take_damage == true:
 			health = health - 20
 			$take_damage_cooldown.start()
@@ -64,14 +62,12 @@ func deal_with_damage():
 			if health == 0:
 				self.queue_free()
 
-
 func _on_take_damage_cooldown_timeout():
 	can_take_damage = true
 	
 func update_health():
 	var healthBar = $healthBar
 	healthBar.value = health
-		
 	if health >= 100:
 		healthBar.visible = false
 	else:

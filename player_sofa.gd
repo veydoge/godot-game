@@ -10,10 +10,11 @@ var canpick = true
 var spawn_position : Vector2
 var health = 100
 var Direction
+var player_current_attack = false
+@onready var healthbar = $ProgressBar
 @onready var animatedSprite : AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(_delta):
-	World.pos = position
 	if (velocity.x == 0):
 		animatedSprite.play("idle")
 	Direction = Input.get_vector("leftmove", "rightmove", "upmove", "downmove")
@@ -43,29 +44,23 @@ func _physics_process(_delta):
 		velocity.y= move_toward(velocity.y, 0, speed)
 	move_and_slide()
 	enemy_attack()
-	attack()
 	update_health()
-	
-	if health == 0:
-		player_alive = false 
-		World.player_health = 0
-		print("player has been killed")
-		get_tree().change_scene_to_file("res://panel.tscn")
-	
-		
+
 func player():
 	pass
 
-func update_health():
-	var healthbar = $ProgressBar 
+func update_health(): 
 	healthbar.value = health
-	
 	if health >= 100:
 		healthbar.visible = false
+	elif health == 0:
+		player_alive = false 
+		health = 0
+		print("player has been killed")
+		get_tree().change_scene_to_file("res://panel.tscn")
 	else:
 		healthbar.visible = true
-		
-		
+
 func _on_timer_timeout():
 	if health < 100:
 		health = health + 20
@@ -74,11 +69,9 @@ func _on_timer_timeout():
 	if health <= 0:
 		health = 0
 
-
 func _on_player_hitbox_body_entered(body):
 	if body.has_method("enemy"):
 		enemy_inattack_range = true
-
 
 func _on_player_hitbox_body_exited(body):
 	if body.has_method("enemy"):
@@ -91,23 +84,21 @@ func enemy_attack():
 		$attack_cooldown.start()
 		print(health)
 
-
 func _on_attack_cooldown_timeout():
 	enemy_attak_cooldown = true
-	
-func attack():
-	var air = current_dir
-	if Input.is_action_just_pressed("attack"):
-		World.player_current_attack = true
+
+func _input(event):
+	if event.is_action_pressed("attack"):
+		player_current_attack = true
 		attack_ip = true
-		if air == "going":
+		if current_dir == "going":
 			$deal_attack_timer.start()
-		if air == "down":
+		if current_dir == "down":
 			$deal_attack_timer.start()
-		if air == "up":
+		if current_dir == "up":
 			$deal_attack_timer.start()
 
 func _on_deal_attack_timer_timeout():
 	$deal_attack_timer.stop()
-	World.player_current_attack = false
+	player_current_attack = false
 	attack_ip = false
