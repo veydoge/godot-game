@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ke36y4hnpwk2"]
+[gd_scene load_steps=26 format=3 uid="uid://1m5kh5r6qrxw"]
 
 [ext_resource type="Script" path="res://player_sofa.gd" id="1_stgqi"]
 [ext_resource type="Texture2D" uid="uid://cxynmsoo2fuih" path="res://walkright-Sheet.png" id="2_2ood2"]
@@ -308,7 +308,6 @@ libraries = {
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1, 0)
-zoom = Vector2(4, 4)
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
