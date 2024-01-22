@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://diui1glh7duqx"]
 
 [ext_resource type="PackedScene" uid="uid://dm84xb54ww2rg" path="res://collectable.tscn" id="1_c0vju"]
-[ext_resource type="Texture2D" uid="uid://jnt842tdfijv" path="res://assets/inventory/tomato.png" id="2_75di4"]
+[ext_resource type="Texture2D" uid="uid://jnt842tdfijv" path="res://assets/inventory/icons/tomato.png" id="2_75di4"]
 [ext_resource type="Script" path="res://classes/InventoryItem.gd" id="2_a8u4k"]
 [ext_resource type="Script" path="res://tomatoitem.gd" id="2_vdy7b"]
 
