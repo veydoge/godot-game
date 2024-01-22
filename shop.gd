@@ -28,5 +28,3 @@ func _on_buy_pressed():
 		SaveCoins.coin -= Global.items[currentItem]["Cost"]
 	else:
 		get_node("Error").text = "Недостаточно монет"
-		
-	
