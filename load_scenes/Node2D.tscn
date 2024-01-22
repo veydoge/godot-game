@@ -92,5 +92,13 @@ layout_mode = 2
 [node name="ItemSlot15" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("5_o4eug")]
 layout_mode = 2
 
+[connection signal="body_entered" from="TileMap/Tomato" to="TileMap/Tomato" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="TileMap/Tomato" to="TileMap/Tomato" method="_on_body_exited" flags=18]
+[connection signal="body_entered" from="TileMap/@Area2D@42715" to="TileMap/@Area2D@42715" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="TileMap/@Area2D@42715" to="TileMap/@Area2D@42715" method="_on_body_exited" flags=18]
+[connection signal="body_entered" from="TileMap/@Area2D@42716" to="TileMap/@Area2D@42716" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="TileMap/@Area2D@42716" to="TileMap/@Area2D@42716" method="_on_body_exited" flags=18]
+[connection signal="body_entered" from="TileMap/@Area2D@42717" to="TileMap/@Area2D@42717" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="TileMap/@Area2D@42717" to="TileMap/@Area2D@42717" method="_on_body_exited" flags=18]
 [connection signal="closed" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_opened"]

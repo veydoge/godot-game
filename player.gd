@@ -1,5 +1,7 @@
 extends CharacterBody2D
-const speed = 300
+
+const speed = 200
+
 @onready var animatedSprite : AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta):
@@ -17,6 +19,7 @@ func _physics_process(delta):
 			animatedSprite.play("going_left")
 			animatedSprite.flip_h = true
 	else:
-		velocity.x= move_toward(velocity.x, 0, speed)
-		velocity.y= move_toward(velocity.y, 0, speed)
-	move_and_slide()
+		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.y = move_toward(velocity.y, 0, speed)
+	
+	move_and_collide(velocity * delta)
