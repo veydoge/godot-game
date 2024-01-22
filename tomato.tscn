@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://diui1glh7duqx"]
+[gd_scene load_steps=8 format=3 uid="uid://diui1glh7duqx"]
 
 [ext_resource type="PackedScene" uid="uid://dm84xb54ww2rg" path="res://collectable.tscn" id="1_c0vju"]
 [ext_resource type="Texture2D" uid="uid://jnt842tdfijv" path="res://assets/inventory/icons/tomato.png" id="2_75di4"]
@@ -12,17 +12,27 @@ texture = ExtResource("2_75di4")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mdwhm"]
 resource_local_to_scene = true
-size = Vector2(62, 59)
+size = Vector2(42, 40.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_an6ed"]
+size = Vector2(24, 8)
 
 [node name="Tomato" instance=ExtResource("1_c0vju")]
 script = ExtResource("2_vdy7b")
 itemRes = SubResource("Resource_f6og3")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("RectangleShape2D_mdwhm")
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_75di4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_an6ed")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

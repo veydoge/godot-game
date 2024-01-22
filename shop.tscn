@@ -66,10 +66,10 @@ texture = ExtResource("2_tlxfe")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gypoi"]
 bg_color = Color(0.831373, 0.117647, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dd6l8"]
 animations = [{
@@ -121,25 +121,25 @@ font_size = 24
 font_size = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ycl55"]
-bg_color = Color(0, 0, 0, 0.403922)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+bg_color = Color(0.435294, 0, 0, 0.419608)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_23fgj"]
-bg_color = Color(0, 0, 0, 0.403922)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+bg_color = Color(0.435294, 0, 0, 0.419608)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvb61"]
-bg_color = Color(0, 0, 0, 0.403922)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+bg_color = Color(0.435294, 0, 0, 0.419608)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="shop" type="CanvasLayer"]
 process_mode = 3
@@ -159,21 +159,21 @@ anchor_left = 0.007
 anchor_top = 0.605
 anchor_right = 0.007
 anchor_bottom = 0.605
-offset_left = 29.48
+offset_left = 45.48
 offset_top = -149.9
 offset_right = 333.48
-offset_bottom = -6.9
+offset_bottom = -6.89999
 theme_override_styles/panel = SubResource("StyleBoxTexture_i0y63")
 
 [node name="Closebtn" type="Button" parent="."]
 anchors_preset = -1
 anchor_top = -0.154
 anchor_bottom = -0.154
-offset_left = 312.0
-offset_top = -13.28
-offset_right = 337.0
-offset_bottom = -1.28
-theme_override_font_sizes/font_size = 8
+offset_left = 320.0
+offset_top = -12.28
+offset_right = 336.0
+offset_bottom = -4.28
+theme_override_font_sizes/font_size = 5
 theme_override_styles/normal = SubResource("StyleBoxFlat_gypoi")
 text = "Х"
 
@@ -203,9 +203,9 @@ autowrap_mode = 3
 [node name="Des" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 31.0
+offset_top = 40.0
 offset_right = 304.0
-offset_bottom = 65.0
+offset_bottom = 66.0
 text = "Для ..."
 label_settings = SubResource("LabelSettings_7vcon")
 horizontal_alignment = 1
@@ -215,38 +215,38 @@ autowrap_mode = 3
 [node name="Next" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 256.0
-offset_top = 23.0
+offset_top = 24.0
 offset_right = 264.0
-offset_bottom = 43.0
-theme_override_font_sizes/font_size = 10
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 5
 theme_override_styles/normal = SubResource("StyleBoxFlat_ycl55")
 text = ">"
 
 [node name="Prev" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 120.0
-offset_top = 23.0
+offset_top = 24.0
 offset_right = 128.0
-offset_bottom = 43.0
-theme_override_font_sizes/font_size = 10
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 5
 theme_override_styles/normal = SubResource("StyleBoxFlat_23fgj")
 text = "<"
 
 [node name="Buy" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 160.0
-offset_top = 63.0
+offset_top = 72.0
 offset_right = 224.0
-offset_bottom = 79.0
+offset_bottom = 88.0
 theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxFlat_fvb61")
 text = "Купить"
 
 [node name="Cash" type="Label" parent="."]
 offset_left = 256.0
-offset_top = 71.0
+offset_top = 72.0
 offset_right = 328.0
-offset_bottom = 87.0
+offset_bottom = 88.0
 theme_override_font_sizes/font_size = 8
 text = "Монет: "
 script = ExtResource("7_kjd7o")

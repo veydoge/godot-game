@@ -1,22 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://mata51t650ff"]
+[gd_scene load_steps=8 format=3 uid="uid://mata51t650ff"]
 
 [ext_resource type="Texture2D" uid="uid://c5bb15awmg2jg" path="res://assets/inventory/icons/tree.png" id="1_fnqhm"]
 [ext_resource type="Script" path="res://tree.gd" id="1_onrd7"]
+[ext_resource type="Script" path="res://classes/InventoryItem.gd" id="2_1r6b2"]
+[ext_resource type="Texture2D" uid="uid://n0s22lj5hbw5" path="res://assets/inventory/icons/wood.png" id="3_gs3bo"]
+
+[sub_resource type="Resource" id="Resource_daiqa"]
+script = ExtResource("2_1r6b2")
+name = "Wood"
+texture = ExtResource("3_gs3bo")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58fum"]
-size = Vector2(70, 70)
+size = Vector2(53, 55.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbkqk"]
+size = Vector2(7, 15)
 
 [node name="Tree" type="Area2D"]
 script = ExtResource("1_onrd7")
+itemRes = SubResource("Resource_daiqa")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.25)
 shape = SubResource("RectangleShape2D_58fum")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-9.53674e-07, -4.76837e-07)
 scale = Vector2(0.330426, 0.384766)
 texture = ExtResource("1_fnqhm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.5, 15.5)
+shape = SubResource("RectangleShape2D_gbkqk")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

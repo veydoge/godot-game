@@ -34,11 +34,9 @@ func _physics_process(_delta):
 		if (velocity.y < 0):
 			current_dir = "up"
 			animatedSprite.play("up")
-			animatedSprite.flip_h = false
 		if (velocity.y > 0):
 			current_dir = "down"
 			animatedSprite.play("down")
-			animatedSprite.flip_h = false
 	else:
 		velocity.x= move_toward(velocity.x, 0, speed)
 		velocity.y= move_toward(velocity.y, 0, speed)
