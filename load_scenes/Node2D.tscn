@@ -33,7 +33,6 @@ process_mode = 3
 script = ExtResource("4_i3sa2")
 
 [node name="InventoryGUI" parent="CanvasLayer" instance=ExtResource("4_wpsuf")]
-visible = false
 offset_left = -92.0
 offset_top = -56.0
 offset_right = 92.0

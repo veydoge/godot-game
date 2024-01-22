@@ -12,6 +12,7 @@ func update():
 		slots[i].update(inventory.slots[i])
 		
 func _ready():
+	connectSlots()
 	inventory.updated.connect(update)	
 	update()
 
@@ -25,3 +26,9 @@ func close():
 	isOpen = false
 	closed.emit()
 	
+func connectSlots():
+	for slot in slots:
+		slot.slotButton.pressed.connect(onSlotClicked)
+		
+func onSlotClicked():
+	print("123")

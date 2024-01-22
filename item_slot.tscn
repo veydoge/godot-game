@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://classes/item_slot.gd" id="1_wn1gh"]
 [ext_resource type="Texture2D" uid="uid://dboed75ndharp" path="res://assets/inventory/icons/Inventory_Slot_1.png" id="2_xsyxx"]
 
-[node name="ItemSlot" type="Panel"]
+[node name="ItemSlot" type="Button"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(32, 32)
 offset_right = 32.0
@@ -21,12 +21,14 @@ offset_top = 5.0
 offset_right = 27.0
 offset_bottom = 27.0
 
-[node name="Panel" type="Panel" parent="CenterContainer"]
+[node name="SlotButton" type="Button" parent="CenterContainer"]
+self_modulate = Color(1, 1, 1, 0)
 clip_contents = true
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
+mouse_filter = 1
 
-[node name="item2d" type="TextureRect" parent="CenterContainer/Panel"]
+[node name="item2d" type="TextureRect" parent="CenterContainer/SlotButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,7 +41,7 @@ grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
 
-[node name="Label" type="Label" parent="CenterContainer/Panel"]
+[node name="Label" type="Label" parent="CenterContainer/SlotButton"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -52,6 +54,7 @@ offset_right = -1.0
 offset_bottom = 3.0
 grow_horizontal = 0
 grow_vertical = 0
+mouse_filter = 1
 theme_override_font_sizes/font_size = 7
 horizontal_alignment = 1
 vertical_alignment = 1

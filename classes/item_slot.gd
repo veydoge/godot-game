@@ -1,8 +1,9 @@
-extends Panel
+extends Button
 
 @onready var backgroundSprite: Sprite2D = $background
-@onready var itemsprite: TextureRect = $CenterContainer/Panel/item2d
-@onready var amountlabel: Label = $CenterContainer/Panel/Label
+@onready var itemsprite: TextureRect = $CenterContainer/SlotButton/item2d
+@onready var amountlabel: Label = $CenterContainer/SlotButton/Label
+@onready var slotButton: Button = $CenterContainer/SlotButton
 
 func update(slot: InventorySlot):
 	if !slot.item:
