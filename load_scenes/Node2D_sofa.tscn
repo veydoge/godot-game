@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dp1pi6eubd7sh"]
+[gd_scene load_steps=20 format=3 uid="uid://dp1pi6eubd7sh"]
 
 [ext_resource type="TileSet" uid="uid://chch7qij7mj4j" path="res://summertileset.tres" id="1_6vgqx"]
 [ext_resource type="Script" path="res://Node2D_sofa.gd" id="1_n5n6c"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bp82bt55e1vtw" path="res://shop.tscn" id="7_jxqxq"]
 [ext_resource type="Texture2D" uid="uid://depglw2yf4s18" path="res://boilerEmpty-Sheet.png" id="7_q4bxh"]
 [ext_resource type="Script" path="res://Boiler.gd" id="8_qq20j"]
+[ext_resource type="Texture2D" uid="uid://bq7e2dlja5eta" path="res://сундук.png" id="10_slfnr"]
+[ext_resource type="PackedScene" uid="uid://cgos5hr0tgp5i" path="res://workbench.tscn" id="11_lxis5"]
 
 [sub_resource type="GDScript" id="GDScript_2laos"]
 script/source = "extends Area2D
@@ -21,7 +23,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
 
 func _on_body_entered(body):
 	if body.name == \"player\":
@@ -75,6 +76,36 @@ animations = [{
 "name": &"boiler",
 "speed": 5.0
 }]
+
+[sub_resource type="GDScript" id="GDScript_1waxr"]
+script/source = "extends Area2D
+
+var currentItem = 0
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func _on_body_entered(body):
+	if body.name == \"player\":
+		get_tree().paused = true
+		get_node(\"../player/AnimatedSprite2D\").play(\"idle\")
+		get_node(\"workbench/AnimationPlayer\").play(\"TrainIn\")
+		get_node(\"workbench/Control/AnimSprite\").play(Global.resources[currentItem][\"Name\"])
+		get_node(\"workbench/Control/Name\").text = Global.resources[currentItem][\"Name\"]
+		get_node(\"workbench/Control/Des\").text = Global.resources[currentItem][\"Des\"]
+		get_node(\"workbench/Control/Des\").text += \"\\n Cost: \" + str(Global.resources[currentItem][\"Cost\"])
+
+
+func _on_body_exited(body):
+	pass # Replace with function body.
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwn1g"]
+size = Vector2(46, 23)
 
 [node name="world" type="Node2D"]
 script = ExtResource("1_n5n6c")
@@ -147,5 +178,25 @@ animation = &"boiler"
 frame_progress = 0.176946
 script = ExtResource("8_qq20j")
 
+[node name="chest" type="Area2D" parent="."]
+z_index = 1
+position = Vector2(501, 731)
+collision_layer = 3
+collision_mask = 3
+script = SubResource("GDScript_1waxr")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="chest"]
+scale = Vector2(0.335938, 0.335938)
+texture = ExtResource("10_slfnr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chest"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_qwn1g")
+
+[node name="workbench" parent="chest" instance=ExtResource("11_lxis5")]
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="chest" to="chest" method="_on_body_entered"]
+[connection signal="body_exited" from="chest" to="chest" method="_on_body_exited"]

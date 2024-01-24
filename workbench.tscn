@@ -1,0 +1,206 @@
+[gd_scene load_steps=16 format=3 uid="uid://cgos5hr0tgp5i"]
+
+[ext_resource type="Script" path="res://workbench.gd" id="1_i0e4r"]
+[ext_resource type="Texture2D" uid="uid://bpfn2il3u8rrn" path="res://sprite/backgroudShop.jpg" id="1_ybmbk"]
+[ext_resource type="Texture2D" uid="uid://buh8hoi50qxmq" path="res://sprite/BlueSword.png" id="2_q2smo"]
+[ext_resource type="Texture2D" uid="uid://bnbywl5u72gen" path="res://assets/inventory/icons/pickaxe.png" id="3_icfgj"]
+[ext_resource type="Texture2D" uid="uid://c41nqqug1o4h4" path="res://assets/inventory/icons/axe.png" id="5_hm2kg"]
+
+[sub_resource type="Animation" id="Animation_5o6if"]
+resource_name = "TrainIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -250), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fnik8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -250)]
+}
+
+[sub_resource type="Animation" id="Animation_k45xh"]
+resource_name = "TrainOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 250)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qmnbj"]
+_data = {
+"RESET": SubResource("Animation_fnik8"),
+"TrainIn": SubResource("Animation_5o6if"),
+"TrainOut": SubResource("Animation_k45xh")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6olvi"]
+texture = ExtResource("1_ybmbk")
+modulate_color = Color(0.309804, 0.278431, 0.0666667, 0.815686)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3vhw"]
+bg_color = Color(0.6, 0.105882, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_08e31"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_icfgj")
+}],
+"loop": true,
+"name": &"Кирка",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q2smo")
+}],
+"loop": true,
+"name": &"Меч",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_hm2kg")
+}],
+"loop": true,
+"name": &"Топор",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l8fks"]
+bg_color = Color(0.00392157, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vndq5"]
+bg_color = Color(0.00392157, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ulody"]
+bg_color = Color(0.00392157, 0, 0, 1)
+
+[node name="workbench" type="CanvasLayer"]
+process_mode = 3
+offset = Vector2(0, -250)
+transform = Transform2D(1, 0, 0, 1, 0, -250)
+script = ExtResource("1_i0e4r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Panel")
+libraries = {
+"": SubResource("AnimationLibrary_qmnbj")
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = -1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 344.0
+offset_bottom = 160.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_6olvi")
+
+[node name="Closebtn" type="Button" parent="."]
+offset_left = 320.0
+offset_top = 24.0
+offset_right = 336.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 5
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3vhw")
+text = "X
+"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 56.0
+offset_top = 56.0
+offset_right = 312.0
+offset_bottom = 144.0
+
+[node name="AnimSprite" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(128, 24)
+scale = Vector2(0.326, 0.353976)
+sprite_frames = SubResource("SpriteFrames_08e31")
+animation = &"Меч"
+
+[node name="Name" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = -16.0
+offset_right = 154.0
+offset_bottom = 1.0
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+
+[node name="Des" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 224.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+
+[node name="Next" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 24.0
+offset_right = 218.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_l8fks")
+text = ">"
+
+[node name="Prev" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 24.0
+offset_right = 66.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_vndq5")
+text = "<"
+
+[node name="Buy" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = 36.0
+offset_right = 32.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_ulody")
+text = "Купить"
+
+[connection signal="pressed" from="Closebtn" to="." method="_on_closebtn_pressed"]
+[connection signal="pressed" from="Control/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Control/Prev" to="." method="_on_prev_pressed"]
+[connection signal="pressed" from="Control/Buy" to="." method="_on_buy_pressed"]
