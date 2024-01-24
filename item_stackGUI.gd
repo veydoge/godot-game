@@ -1,11 +1,35 @@
 extends Button
 
+class_name ItemStackGUI
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@onready var backgroundSprite: Sprite2D = $"../../background"
+@onready var itemsprite: TextureRect = $item2d
+@onready var amountlabel: Label = $Label
 
+var inventorySlot
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func update():
+	
+	if !inventorySlot || !inventorySlot.item: return
+	itemsprite.visible = true
+	itemsprite.texture = inventorySlot.item.texture
+	
+	if inventorySlot.amount > 1:
+		amountlabel.visible = true
+		amountlabel.text = str(inventorySlot.amount)
+	else:
+		amountlabel.visible = false
+	
+
+func update_bottom_inventory_slot():
+	if !inventorySlot || !inventorySlot.item: return
+	itemsprite.visible = true
+	itemsprite.texture = inventorySlot.item.texture
+	
+	backgroundSprite.texture = inventorySlot.texture
+	
+	if inventorySlot.amount > 1:
+		amountlabel.visible = true
+		amountlabel.text = str(inventorySlot.amount)
+	else:
+		amountlabel.visible = false

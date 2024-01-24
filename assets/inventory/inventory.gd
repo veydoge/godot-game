@@ -27,7 +27,7 @@ func insert(item: InventoryItem):
 func get_current_slot():
 	return current_slot
 
-func update_current_slot(slot: InventorySlot):
+func update_current_slot(slot: InventorySlot): # method for making a slot "active" in bottom panel
 	if current_slot != null:
 		current_slot.texture = default_image
 	current_slot = slot
