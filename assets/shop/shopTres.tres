@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Shop" load_steps=7 format=3 uid="uid://b0pr2144d71kl"]
+
+[ext_resource type="Resource" uid="uid://dw1m12xkyfyx0" path="res://assets/shop/flaskYellow.tres" id="1_5yndk"]
+[ext_resource type="Resource" uid="uid://cyc0hwu61iuxv" path="res://assets/shop/flaskGreen.tres" id="2_ieva6"]
+[ext_resource type="Resource" uid="uid://cyoxj1x0xesy5" path="res://assets/shop/flaskRed.tres" id="3_xlyof"]
+[ext_resource type="Resource" uid="uid://cp60sweg5g25f" path="res://assets/shop/flaskPurple.tres" id="4_qeovc"]
+[ext_resource type="Resource" uid="uid://ck2klrameu0hb" path="res://assets/shop/flaskBlue.tres" id="5_mdl5n"]
+[ext_resource type="Script" path="res://ShopTres.gd" id="6_jmsoc"]
+
+[resource]
+script = ExtResource("6_jmsoc")
+items = Array[Resource("res://classes/ShopItem.gd")]([ExtResource("2_ieva6"), ExtResource("5_mdl5n"), ExtResource("1_5yndk"), ExtResource("4_qeovc"), ExtResource("3_xlyof")])

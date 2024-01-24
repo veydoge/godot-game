@@ -25,12 +25,10 @@ func update():
 		callable = callable.bind(slots[i])
 		itemStackGUI.pressed.connect(callable)
 			
-		
 func _ready():
 	update()
 	inventory.updated.connect(update)	
 	
-
 func open():
 	visible = true
 	isOpen = true
@@ -41,6 +39,11 @@ func close():
 	isOpen = false
 	closed.emit()
 	
+func connectSlots():
+	for slot in slots:
+		var callable = Callable(onSlotClicked)
+		callable = callable.bind(slot)
+		slot.slotButton.pressed.connect(onSlotClicked)
 		
 func onSlotClicked(slot):
 	print("123")
