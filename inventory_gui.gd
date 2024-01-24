@@ -29,7 +29,7 @@ func close():
 func connectSlots():
 	for slot in slots:
 		var callable = Callable(onSlotClicked)
-		callable = callalbe.bind(slot)
+		callable = callable.bind(slot)
 		slot.slotButton.pressed.connect(onSlotClicked)
 		
 func onSlotClicked(slot):

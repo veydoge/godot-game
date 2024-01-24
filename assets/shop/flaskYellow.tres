@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ShopItem" load_steps=5 format=3 uid="uid://dw1m12xkyfyx0"]
+
+[ext_resource type="Script" path="res://classes/ShopItem.gd" id="1_ggkle"]
+[ext_resource type="Script" path="res://classes/InventoryItem.gd" id="1_k30qe"]
+[ext_resource type="Texture2D" uid="uid://0sms8sewhbto" path="res://sprite/flasks/flaskYellow.png" id="2_c671f"]
+
+[sub_resource type="Resource" id="Resource_wil48"]
+script = ExtResource("1_k30qe")
+name = "Жёлтое зелье"
+texture = ExtResource("2_c671f")
+
+[resource]
+script = ExtResource("1_ggkle")
+name = "Жёлтое зелье"
+description = "Для жёлтого хила"
+cost = 30.0
+texture = ExtResource("2_c671f")
+inventoryItem = SubResource("Resource_wil48")

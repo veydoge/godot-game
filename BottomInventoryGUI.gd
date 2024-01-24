@@ -5,7 +5,6 @@ extends Control
 
 func update():
 	for i in range(5):
-		slots[i].update(inventory.slots[i])
 		slots[i].update_bottom_inventory_slot(inventory.slots[i])
 		
 # Called when the node enters the scene tree for the first time.
