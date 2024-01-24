@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df0saybrdsx77"
-path="res://.godot/imported/stone.png-b77753a96fdab8dfc793262258713901.ctex"
+uid="uid://bq7e2dlja5eta"
+path="res://.godot/imported/сундук.png-ca66b344a76dc3c4a262560023df09b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/inventory/icons/stone.png"
-dest_files=["res://.godot/imported/stone.png-b77753a96fdab8dfc793262258713901.ctex"]
+source_file="res://сундук.png"
+dest_files=["res://.godot/imported/сундук.png-ca66b344a76dc3c4a262560023df09b8.ctex"]
 
 [params]
 

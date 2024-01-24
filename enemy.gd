@@ -28,7 +28,7 @@ func _physics_process(delta):
 			animations.play("jump")
 	if dead:
 		$detection_area/CollisionShape2D.disabled = true
-	
+
 func _on_timer_timeout():
 	nav.target_position = pl.global_position
 
@@ -40,7 +40,7 @@ func _on_detection_area_body_entered(body):
 func _on_detection_area_body_exited(body):
 	if body.has_method("player"):
 		player_in_area = false
-		
+
 func enemy():
 	pass
 
@@ -64,7 +64,7 @@ func deal_with_damage():
 
 func _on_take_damage_cooldown_timeout():
 	can_take_damage = true
-	
+
 func update_health():
 	var healthBar = $healthBar
 	healthBar.value = health

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df0saybrdsx77"
-path="res://.godot/imported/stone.png-b77753a96fdab8dfc793262258713901.ctex"
+uid="uid://byr518ijek1j2"
+path="res://.godot/imported/workbenchBackground.jpg-525662ff20990a27561989cd85487a40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/inventory/icons/stone.png"
-dest_files=["res://.godot/imported/stone.png-b77753a96fdab8dfc793262258713901.ctex"]
+source_file="res://workbenchBackground.jpg"
+dest_files=["res://.godot/imported/workbenchBackground.jpg-525662ff20990a27561989cd85487a40.ctex"]
 
 [params]
 

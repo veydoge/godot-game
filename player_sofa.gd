@@ -21,22 +21,31 @@ func _physics_process(_delta):
 	if (Direction != Vector2.ZERO):
 		velocity.x = Direction.x * speed	
 		velocity.y = Direction.y * speed
-		if (velocity.x < 0):
-			current_dir = "going"
+		
+		if (velocity.y < 0 && velocity.x > 0):
 			animatedSprite.play("going")
-			$sword.rotation_degrees = 180
-			animatedSprite.flip_h = true
-		if (velocity.x > 0):
-			current_dir = "going"
+		elif (velocity.y > 0 && velocity.x < 0):
 			animatedSprite.play("going")
-			$sword.rotation_degrees = 0
-			animatedSprite.flip_h = false
-		if (velocity.y < 0):
+		elif (velocity.y < 0 && velocity.x < 0):
+			animatedSprite.play("going")
+		elif (velocity.y > 0 && velocity.x > 0):
+			animatedSprite.play("going")
+			
+		elif (velocity.y < 0 ):
 			current_dir = "up"
-			animatedSprite.play("up")
-		if (velocity.y > 0):
+			animatedSprite.play("upmove")
+		elif (velocity.y > 0):
 			current_dir = "down"
-			animatedSprite.play("down")
+			animatedSprite.play("downmove")	
+			
+		elif (velocity.x < 0):
+			current_dir = "going"
+			animatedSprite.play("going")
+			scale.x = scale.y * -1
+		elif (velocity.x > 0):
+			current_dir = "going"
+			animatedSprite.play("going")
+			scale.x = scale.y * 1
 	else:
 		velocity.x= move_toward(velocity.x, 0, speed)
 		velocity.y= move_toward(velocity.y, 0, speed)
