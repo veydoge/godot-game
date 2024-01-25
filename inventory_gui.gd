@@ -7,6 +7,7 @@ signal closed
 @onready var ItemStackGUIClass = preload("res://item_stackGUI.tscn")
 @onready var slots: Array = $GridContainer.get_children()
 var isOpen = false
+var itemInHand: ItemStackGUI
 
 func update():
 	for i in range(min(inventory.slots.size(), slots.size())):
@@ -43,4 +44,12 @@ func close():
 	
 		
 func onSlotClicked(slot):
-	print("123")
+	itemInHand = slot.takeItem()
+	add_child(itemInHand)
+	
+func updateItemInHand():
+	if !itemInHand: return
+	itemInHand.global_position = get_global_mouse_position() - itemInHand.size / 2
+	
+func _input(event):
+	updateItemInHand()

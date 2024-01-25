@@ -10,3 +10,10 @@ var itemStackGUI: ItemStackGUI
 func insert(isg: ItemStackGUI):
 	itemStackGUI = isg
 	container.add_child(itemStackGUI)
+	
+func takeItem():
+	var item = itemStackGUI
+	container.remove_child(itemStackGUI)
+	itemStackGUI = null
+	
+	return item
