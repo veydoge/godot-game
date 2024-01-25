@@ -1,41 +1,39 @@
 [gd_scene load_steps=20 format=3 uid="uid://dp1pi6eubd7sh"]
 
 [ext_resource type="TileSet" uid="uid://chch7qij7mj4j" path="res://summertileset.tres" id="1_6vgqx"]
-[ext_resource type="Script" path="res://Node2D_sofa.gd" id="1_n5n6c"]
+[ext_resource type="Script" path="res://CanvasLayer.gd" id="4_151ap"]
 [ext_resource type="PackedScene" uid="uid://1m5kh5r6qrxw" path="res://player_sofa.tscn" id="4_rkwjr"]
 [ext_resource type="PackedScene" uid="uid://bsy4xbbfek3j2" path="res://enemy.tscn" id="5_2pm0o"]
+[ext_resource type="PackedScene" uid="uid://dodke3emyt7xy" path="res://inventory_gui.tscn" id="5_lstf1"]
 [ext_resource type="Texture2D" uid="uid://c1c3vfbdx6mch" path="res://sprite/прилавок.png" id="6_ja1s2"]
+[ext_resource type="PackedScene" uid="uid://b1ifmfx2liswj" path="res://item_slot.tscn" id="6_nue44"]
 [ext_resource type="PackedScene" uid="uid://bp82bt55e1vtw" path="res://shop.tscn" id="7_jxqxq"]
 [ext_resource type="Texture2D" uid="uid://depglw2yf4s18" path="res://boilerEmpty-Sheet.png" id="7_q4bxh"]
 [ext_resource type="Script" path="res://Boiler.gd" id="8_qq20j"]
 [ext_resource type="Texture2D" uid="uid://bq7e2dlja5eta" path="res://сундук.png" id="10_slfnr"]
 [ext_resource type="PackedScene" uid="uid://cgos5hr0tgp5i" path="res://workbench.tscn" id="11_lxis5"]
 
-[sub_resource type="GDScript" id="GDScript_2laos"]
-script/source = "extends Area2D
+[sub_resource type="GDScript" id="GDScript_nuyg0"]
+script/source = "extends Node2D
 
-var currentItem = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+"
+
+[sub_resource type="GDScript" id="GDScript_2laos"]
+script/source = "extends Area2D
 
 func _on_body_entered(body):
 	if body.name == \"player\":
 		get_tree().paused = true
 		get_node(\"../player/AnimatedSprite2D\").play(\"idle\")
 		get_node(\"shop/Anim\").play(\"TransIn\")
-		get_node(\"shop/Control/AnimSprite\").play(Global.items[currentItem][\"Name\"])
-		get_node(\"shop/Control/Name\").text = Global.items[currentItem][\"Name\"]
-		get_node(\"shop/Control/Des\").text = Global.items[currentItem][\"Des\"]
-		get_node(\"shop/Control/Des\").text += \"\\n Cost: \" + str(Global.items[currentItem][\"Cost\"])
-
-func _on_body_exited(body):
-	pass # Replace with function body.
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_anpjv"]
@@ -108,7 +106,7 @@ func _on_body_exited(body):
 size = Vector2(46, 23)
 
 [node name="world" type="Node2D"]
-script = ExtResource("1_n5n6c")
+script = SubResource("GDScript_nuyg0")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -143,6 +141,70 @@ layer_3/tile_data = PackedInt32Array()
 z_index = 1
 position = Vector2(733, 449)
 pl = NodePath("../player")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("4_151ap")
+
+[node name="InventoryGUI" parent="CanvasLayer" instance=ExtResource("5_lstf1")]
+visible = false
+offset_left = -92.0
+offset_top = -56.0
+offset_right = 92.0
+offset_bottom = 56.0
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/InventoryGUI"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 180.0
+offset_bottom = 109.0
+columns = 5
+
+[node name="ItemSlot" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_nue44")]
+layout_mode = 2
+
+[node name="ItemSlot2" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_nue44")]
+layout_mode = 2
+
+[node name="ItemSlot3" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_nue44")]
+layout_mode = 2
+
+[node name="ItemSlot4" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_nue44")]
+layout_mode = 2
+
+[node name="ItemSlot5" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_nue44")]
+layout_mode = 2
+
+[node name="ItemSlot6" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_nue44")]
+layout_mode = 2
+
+[node name="ItemSlot7" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_nue44")]
+layout_mode = 2
+
+[node name="ItemSlot8" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_nue44")]
+layout_mode = 2
+
+[node name="ItemSlot9" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_nue44")]
+layout_mode = 2
+
+[node name="ItemSlot10" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_nue44")]
+layout_mode = 2
+
+[node name="ItemSlot11" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_nue44")]
+layout_mode = 2
+
+[node name="ItemSlot12" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_nue44")]
+layout_mode = 2
+
+[node name="ItemSlot13" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_nue44")]
+layout_mode = 2
+
+[node name="ItemSlot14" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_nue44")]
+layout_mode = 2
+
+[node name="ItemSlot15" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_nue44")]
+layout_mode = 2
 
 [node name="Area2D" type="Area2D" parent="."]
 light_mask = 2

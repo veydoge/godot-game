@@ -15,29 +15,21 @@ var player_current_attack = false
 @onready var animatedSprite : AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(_delta):
-	if (velocity.x == 0):
-		animatedSprite.play("idle")
+	
 	Direction = Input.get_vector("leftmove", "rightmove", "upmove", "downmove")
+	if (Direction == Vector2.ZERO):
+		animatedSprite.play("idle")
 	if (Direction != Vector2.ZERO):
-		velocity.x = Direction.x * speed	
+		velocity.x = Direction.x * speed
 		velocity.y = Direction.y * speed
-		
-		if (velocity.y < 0 && velocity.x > 0):
-			animatedSprite.play("going")
-		elif (velocity.y > 0 && velocity.x < 0):
-			animatedSprite.play("going")
-		elif (velocity.y < 0 && velocity.x < 0):
-			animatedSprite.play("going")
-		elif (velocity.y > 0 && velocity.x > 0):
-			animatedSprite.play("going")
-			
-		elif (velocity.y < 0 ):
+		if (velocity.y < 0):
 			current_dir = "up"
 			animatedSprite.play("upmove")
 		elif (velocity.y > 0):
 			current_dir = "down"
-			animatedSprite.play("downmove")	
-			
+			animatedSprite.play("downmove")
+		elif (velocity.x == 0):
+			animatedSprite.play("idle")
 		elif (velocity.x < 0):
 			current_dir = "going"
 			animatedSprite.play("going")
@@ -46,6 +38,17 @@ func _physics_process(_delta):
 			current_dir = "going"
 			animatedSprite.play("going")
 			scale.x = scale.y * 1
+		elif (velocity.y < 0 && velocity.x > 0):
+			animatedSprite.play("going")
+		elif (velocity.y > 0 && velocity.x < 0):
+			animatedSprite.play("going")
+		elif (velocity.y < 0 && velocity.x < 0):
+			animatedSprite.play("going")
+		elif (velocity.y > 0 && velocity.x > 0):
+			animatedSprite.play("going")
+	
+			
+
 	else:
 		velocity.x= move_toward(velocity.x, 0, speed)
 		velocity.y= move_toward(velocity.y, 0, speed)
