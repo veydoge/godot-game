@@ -1,8 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://bp82bt55e1vtw"]
+[gd_scene load_steps=24 format=3 uid="uid://bp82bt55e1vtw"]
 
 [ext_resource type="Script" path="res://shop.gd" id="1_lqwkj"]
 [ext_resource type="Texture2D" uid="uid://cuddmvp8wng3n" path="res://sprite/flasks/flaskBlue.png" id="2_o4nyb"]
+[ext_resource type="Script" path="res://Покупка.gd" id="2_qiyw3"]
 [ext_resource type="Texture2D" uid="uid://bpfn2il3u8rrn" path="res://sprite/backgroudShop.jpg" id="2_tlxfe"]
+[ext_resource type="Script" path="res://Продажа.gd" id="6_ypf2f"]
+[ext_resource type="Texture2D" uid="uid://ewpnhv7sfc8a" path="res://swordBlue.png" id="7_4f2if"]
 [ext_resource type="Script" path="res://Cash.gd" id="7_kjd7o"]
 
 [sub_resource type="Animation" id="Animation_l3t6s"]
@@ -10,14 +13,14 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("..:offset")
+tracks/0/path = NodePath("../..:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -400)]
+"values": [Vector2(48, -800)]
 }
 
 [sub_resource type="Animation" id="Animation_25ant"]
@@ -25,14 +28,14 @@ resource_name = "TransIn"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("..:offset")
+tracks/0/path = NodePath("../..:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, -400), Vector2(0, 65)]
+"values": [Vector2(48, -800), Vector2(48, -400)]
 }
 
 [sub_resource type="Animation" id="Animation_ebdd0"]
@@ -40,14 +43,14 @@ resource_name = "TransOut"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("..:offset")
+tracks/0/path = NodePath("../..:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 100), Vector2(0, 800)]
+"values": [Vector2(48, -400), Vector2(48, 400)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bym5a"]
@@ -80,49 +83,75 @@ font_color = Color(0.831373, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gypoi"]
 bg_color = Color(0.831373, 0.117647, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdwpx"]
+bg_color = Color(0.435294, 0, 0, 0.419608)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jruia"]
+bg_color = Color(0.435294, 0, 0, 0.419608)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24ji2"]
+bg_color = Color(0.831373, 0.117647, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4u3n"]
+bg_color = Color(0.435294, 0, 0, 0.419608)
+
 [node name="shop" type="CanvasLayer"]
 process_mode = 3
-offset = Vector2(0, -400)
-transform = Transform2D(1, 0, 0, 1, 0, -400)
+offset = Vector2(0, 400)
+transform = Transform2D(1, 0, 0, 1, 0, 400)
 script = ExtResource("1_lqwkj")
 
 [node name="Anim" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Panel")
+root_node = NodePath("../TabContainer/Покупка/Panel")
 libraries = {
 "": SubResource("AnimationLibrary_bym5a")
 }
 
-[node name="Panel" type="Panel" parent="."]
-anchors_preset = -1
+[node name="TabContainer" type="TabContainer" parent="."]
+offset_left = 48.0
+offset_top = -800.0
+offset_right = 344.0
+offset_bottom = -624.0
+theme_override_font_sizes/font_size = 8
+tab_alignment = 1
+
+[node name="Покупка" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+tab_alignment = 1
+script = ExtResource("2_qiyw3")
+
+[node name="Panel" type="Panel" parent="TabContainer/Покупка"]
+layout_mode = 2
 anchor_left = 0.007
 anchor_top = 0.605
 anchor_right = 0.055
 anchor_bottom = 0.605
-offset_left = 45.48
-offset_top = -149.9
-offset_right = 324.2
-offset_bottom = -6.89999
+offset_left = -2.072
+offset_top = -90.38
+offset_right = 279.72
+offset_bottom = 61.62
 theme_override_styles/panel = SubResource("StyleBoxTexture_i0y63")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
+[node name="Control" type="Control" parent="TabContainer/Покупка"]
+layout_mode = 1
 anchor_left = 0.533
 anchor_top = 0.172
 anchor_right = 0.533
 anchor_bottom = 0.172
-offset_left = -143.88
-offset_top = -70.96
-offset_right = 144.12
-offset_bottom = 71.04
+offset_left = -157.768
+offset_top = -17.316
+offset_right = 130.232
+offset_bottom = 124.684
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Icon" type="Sprite2D" parent="Control"]
+[node name="Icon" type="Sprite2D" parent="TabContainer/Покупка/Control"]
 position = Vector2(144, 58)
 scale = Vector2(0.578125, 0.625)
 texture = ExtResource("2_o4nyb")
 
-[node name="Name" type="Label" parent="Control"]
+[node name="Name" type="Label" parent="TabContainer/Покупка/Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -136,7 +165,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Des" type="Label" parent="Control"]
+[node name="Des" type="Label" parent="TabContainer/Покупка/Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -155,7 +184,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Next" type="Button" parent="Control"]
+[node name="Next" type="Button" parent="TabContainer/Покупка/Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.822
@@ -172,7 +201,7 @@ theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_ycl55")
 text = ">"
 
-[node name="Prev" type="Button" parent="Control"]
+[node name="Prev" type="Button" parent="TabContainer/Покупка/Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.5
@@ -187,7 +216,7 @@ theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_23fgj")
 text = "<"
 
-[node name="Buy" type="Button" parent="Control"]
+[node name="Buy" type="Button" parent="TabContainer/Покупка/Control"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -204,7 +233,7 @@ theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxFlat_fvb61")
 text = "Купить"
 
-[node name="Cash" type="Label" parent="Control"]
+[node name="Cash" type="Label" parent="TabContainer/Покупка/Control"]
 layout_mode = 0
 offset_left = 197.0
 offset_top = 122.0
@@ -215,7 +244,7 @@ text = "Монет: "
 vertical_alignment = 1
 script = ExtResource("7_kjd7o")
 
-[node name="Error" type="Label" parent="Control"]
+[node name="Error" type="Label" parent="TabContainer/Покупка/Control"]
 layout_mode = 0
 offset_top = -1.0
 offset_right = 287.0
@@ -227,20 +256,101 @@ label_settings = SubResource("LabelSettings_kxafk")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Closebtn" type="Button" parent="Control"]
-layout_mode = 1
-anchors_preset = -1
+[node name="Closebtn" type="Button" parent="TabContainer/Покупка/Control"]
+layout_mode = 2
 anchor_top = -0.154
 anchor_bottom = -0.154
 offset_left = 272.0
-offset_top = 21.868
+offset_top = 16.352
 offset_right = 296.0
-offset_bottom = 30.868
+offset_bottom = 32.352
 theme_override_font_sizes/font_size = 5
 theme_override_styles/normal = SubResource("StyleBoxFlat_gypoi")
 text = "Х"
 
-[connection signal="pressed" from="Control/Next" to="." method="_on_next_pressed"]
-[connection signal="pressed" from="Control/Prev" to="." method="_on_prev_pressed"]
-[connection signal="pressed" from="Control/Buy" to="." method="_on_buy_pressed"]
-[connection signal="pressed" from="Control/Closebtn" to="." method="_on_closebtn_pressed"]
+[node name="Продажа" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+tab_alignment = 1
+script = ExtResource("6_ypf2f")
+
+[node name="Panel" type="Panel" parent="TabContainer/Продажа"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.007
+anchor_top = 0.605
+anchor_right = 0.055
+anchor_bottom = 0.605
+offset_top = 16.0
+offset_right = 294.08
+offset_bottom = 176.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_i0y63")
+
+[node name="Control" type="Control" parent="TabContainer/Продажа"]
+anchors_preset = 0
+offset_left = 272.0
+offset_top = -16.0
+offset_right = 568.0
+offset_bottom = 120.0
+
+[node name="Icon" type="Sprite2D" parent="TabContainer/Продажа/Control"]
+position = Vector2(-120, 112)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("7_4f2if")
+
+[node name="Next" type="Button" parent="TabContainer/Продажа/Control"]
+layout_mode = 0
+offset_left = -64.0
+offset_top = 104.0
+offset_right = -48.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_rdwpx")
+text = ">"
+
+[node name="Prev" type="Button" parent="TabContainer/Продажа/Control"]
+layout_mode = 0
+offset_left = -200.0
+offset_top = 104.0
+offset_right = -184.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_jruia")
+text = "<"
+
+[node name="Name" type="Label" parent="TabContainer/Продажа/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Des" type="Label" parent="TabContainer/Продажа/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Closebtn" type="Button" parent="TabContainer/Продажа/Control"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 40.0
+offset_right = 17.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 5
+theme_override_styles/normal = SubResource("StyleBoxFlat_24ji2")
+text = "x
+"
+
+[node name="Sell" type="Button" parent="TabContainer/Продажа"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 152.0
+offset_right = 184.0
+offset_bottom = 167.0
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_c4u3n")
+text = "Продать"
+
+[connection signal="pressed" from="TabContainer/Покупка/Control/Next" to="TabContainer/Покупка" method="_on_next_pressed"]
+[connection signal="pressed" from="TabContainer/Покупка/Control/Prev" to="TabContainer/Покупка" method="_on_prev_pressed"]
+[connection signal="pressed" from="TabContainer/Покупка/Control/Buy" to="TabContainer/Покупка" method="_on_buy_pressed"]
+[connection signal="pressed" from="TabContainer/Покупка/Control/Closebtn" to="TabContainer/Покупка" method="_on_closebtn_pressed"]
+[connection signal="pressed" from="TabContainer/Продажа/Control/Closebtn" to="TabContainer/Продажа" method="_on_closebtn_pressed"]
+[connection signal="pressed" from="TabContainer/Продажа/Sell" to="TabContainer/Продажа" method="_on_sell_pressed"]
