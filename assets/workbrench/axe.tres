@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://b6byvdeqm1a2n"]
+
+[ext_resource type="Resource" uid="uid://c0vindenac7es" path="res://assets/inventory/axe.tres" id="1_woui6"]
+[ext_resource type="Script" path="res://WorkBenchItem.gd" id="2_n2a68"]
+[ext_resource type="Texture2D" uid="uid://c41nqqug1o4h4" path="res://assets/inventory/icons/axe.png" id="2_xwjg5"]
+
+[resource]
+script = ExtResource("2_n2a68")
+name = "Топор"
+description = "Топор для вырубки деревьев"
+cost = 1.0
+texture = ExtResource("2_xwjg5")
+inventoryItem = ExtResource("1_woui6")

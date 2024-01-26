@@ -22,33 +22,33 @@ func _physics_process(_delta):
 	if (Direction != Vector2.ZERO):
 		velocity.x = Direction.x * speed
 		velocity.y = Direction.y * speed
-		if (velocity.y < 0):
+		
+		if Input.is_action_pressed("downmove") && Input.is_action_pressed("rightmove"):
+			animatedSprite.play("going")
+			scale.x = scale.y * 1
+		elif Input.is_action_pressed("upmove") && Input.is_action_pressed("leftmove"):
+			animatedSprite.play("going")
+			scale.x = scale.y * -1
+		elif Input.is_action_pressed("downmove") && Input.is_action_pressed("leftmove"):
+			animatedSprite.play("going")
+			scale.x = scale.y * -1
+		elif Input.is_action_pressed("upmove") && Input.is_action_pressed("rightmove"):
+			animatedSprite.play("going")
+			scale.x = scale.y * 1
+		elif Input.is_action_pressed("upmove"):
 			current_dir = "up"
 			animatedSprite.play("upmove")
-		elif (velocity.y > 0):
+		elif Input.is_action_pressed("downmove"):
 			current_dir = "down"
 			animatedSprite.play("downmove")
-		elif (velocity.x == 0):
-			animatedSprite.play("idle")
-		elif (velocity.x < 0):
+		elif  Input.is_action_pressed("leftmove"):
 			current_dir = "going"
 			animatedSprite.play("going")
 			scale.x = scale.y * -1
-		elif (velocity.x > 0):
+		elif  Input.is_action_pressed("rightmove"):
 			current_dir = "going"
 			animatedSprite.play("going")
 			scale.x = scale.y * 1
-		elif (velocity.y < 0 && velocity.x > 0):
-			animatedSprite.play("going")
-		elif (velocity.y > 0 && velocity.x < 0):
-			animatedSprite.play("going")
-		elif (velocity.y < 0 && velocity.x < 0):
-			animatedSprite.play("going")
-		elif (velocity.y > 0 && velocity.x > 0):
-			animatedSprite.play("going")
-	
-			
-
 	else:
 		velocity.x= move_toward(velocity.x, 0, speed)
 		velocity.y= move_toward(velocity.y, 0, speed)

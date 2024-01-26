@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WorkBenchItem" load_steps=5 format=3 uid="uid://8gbples0peqv"]
+
+[ext_resource type="Script" path="res://classes/InventoryItem.gd" id="1_6ekuk"]
+[ext_resource type="Script" path="res://WorkBenchItem.gd" id="1_tij6r"]
+[ext_resource type="Texture2D" uid="uid://ewpnhv7sfc8a" path="res://swordBlue.png" id="2_k4h4w"]
+
+[sub_resource type="Resource" id="Resource_8lry4"]
+script = ExtResource("1_6ekuk")
+name = "Меч"
+texture = ExtResource("2_k4h4w")
+
+[resource]
+script = ExtResource("1_tij6r")
+name = "Меч"
+description = "Меч для уничтожения монстров"
+cost = 0.0
+texture = ExtResource("2_k4h4w")
+inventoryItem = SubResource("Resource_8lry4")

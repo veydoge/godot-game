@@ -3,10 +3,6 @@
 [ext_resource type="Script" path="res://shop.gd" id="1_lqwkj"]
 [ext_resource type="Texture2D" uid="uid://cuddmvp8wng3n" path="res://sprite/flasks/flaskBlue.png" id="2_o4nyb"]
 [ext_resource type="Texture2D" uid="uid://bpfn2il3u8rrn" path="res://sprite/backgroudShop.jpg" id="2_tlxfe"]
-[ext_resource type="Texture2D" uid="uid://d1y3uvg2hebv4" path="res://sprite/flasks/flaskGreen.png" id="3_fus7h"]
-[ext_resource type="Texture2D" uid="uid://bx2i00ekk6coh" path="res://sprite/flasks/flaskPurple.png" id="4_wtmng"]
-[ext_resource type="Texture2D" uid="uid://dx2xg3nb5usbo" path="res://sprite/flasks/flaskRed.png" id="5_s3hye"]
-[ext_resource type="Texture2D" uid="uid://0sms8sewhbto" path="res://sprite/flasks/flaskYellow.png" id="6_7cgfi"]
 [ext_resource type="Script" path="res://Cash.gd" id="7_kjd7o"]
 
 [sub_resource type="Animation" id="Animation_l3t6s"]
@@ -71,34 +67,18 @@ font_size = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ycl55"]
 bg_color = Color(0.435294, 0, 0, 0.419608)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_23fgj"]
 bg_color = Color(0.435294, 0, 0, 0.419608)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvb61"]
 bg_color = Color(0.435294, 0, 0, 0.419608)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
 
 [sub_resource type="LabelSettings" id="LabelSettings_kxafk"]
 font_color = Color(0.831373, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gypoi"]
 bg_color = Color(0.831373, 0.117647, 0, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
 
 [node name="shop" type="CanvasLayer"]
 process_mode = 3
@@ -120,7 +100,7 @@ anchor_right = 0.055
 anchor_bottom = 0.605
 offset_left = 45.48
 offset_top = -149.9
-offset_right = 333.48
+offset_right = 324.2
 offset_bottom = -6.89999
 theme_override_styles/panel = SubResource("StyleBoxTexture_i0y63")
 
@@ -184,11 +164,11 @@ anchor_right = 0.827
 anchor_bottom = 0.5
 offset_left = -36.736
 offset_top = -11.0
-offset_right = -30.176
+offset_right = -22.176
 offset_bottom = 5.0
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_font_sizes/font_size = 5
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_ycl55")
 text = ">"
 
@@ -198,12 +178,12 @@ anchors_preset = -1
 anchor_top = 0.5
 anchor_right = 0.099
 anchor_bottom = 0.5
-offset_left = 80.0
+offset_left = 72.0
 offset_top = -11.0
 offset_right = 59.488
 offset_bottom = 5.0
 grow_vertical = 2
-theme_override_font_sizes/font_size = 5
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_23fgj")
 text = "<"
 
@@ -225,6 +205,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_fvb61")
 text = "Купить"
 
 [node name="Cash" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 197.0
 offset_top = 122.0
 offset_right = 269.0
@@ -235,6 +216,7 @@ vertical_alignment = 1
 script = ExtResource("7_kjd7o")
 
 [node name="Error" type="Label" parent="Control"]
+layout_mode = 0
 offset_top = -1.0
 offset_right = 287.0
 offset_bottom = 44.0
@@ -250,9 +232,9 @@ layout_mode = 1
 anchors_preset = -1
 anchor_top = -0.154
 anchor_bottom = -0.154
-offset_left = 270.0
+offset_left = 272.0
 offset_top = 21.868
-offset_right = 288.0
+offset_right = 296.0
 offset_bottom = 30.868
 theme_override_font_sizes/font_size = 5
 theme_override_styles/normal = SubResource("StyleBoxFlat_gypoi")

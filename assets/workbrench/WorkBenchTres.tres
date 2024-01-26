@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WorkBench" load_steps=5 format=3 uid="uid://qb3h1gbmo2nw"]
+
+[ext_resource type="Resource" uid="uid://b6byvdeqm1a2n" path="res://assets/workbrench/axe.tres" id="1_dxpxx"]
+[ext_resource type="Resource" uid="uid://b4fh60ynjeawu" path="res://assets/workbrench/pickaxe.tres" id="2_xws7r"]
+[ext_resource type="Resource" uid="uid://8gbples0peqv" path="res://assets/workbrench/sword.tres" id="3_5let8"]
+[ext_resource type="Script" path="res://workbenchTres.gd" id="4_pgfud"]
+
+[resource]
+script = ExtResource("4_pgfud")
+items = Array[Resource("res://WorkBenchItem.gd")]([ExtResource("1_dxpxx"), ExtResource("2_xws7r"), ExtResource("3_5let8")])

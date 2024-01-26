@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dp1pi6eubd7sh"]
+[gd_scene load_steps=23 format=3 uid="uid://dp1pi6eubd7sh"]
 
 [ext_resource type="TileSet" uid="uid://chch7qij7mj4j" path="res://summertileset.tres" id="1_6vgqx"]
 [ext_resource type="Script" path="res://CanvasLayer.gd" id="4_151ap"]
@@ -24,6 +24,8 @@ func _ready():
 func _process(delta):
 	pass
 
+func boiler():
+	pass
 "
 
 [sub_resource type="GDScript" id="GDScript_2laos"]
@@ -92,11 +94,6 @@ func _on_body_entered(body):
 		get_tree().paused = true
 		get_node(\"../player/AnimatedSprite2D\").play(\"idle\")
 		get_node(\"workbench/AnimationPlayer\").play(\"TrainIn\")
-		get_node(\"workbench/Control/AnimSprite\").play(Global.resources[currentItem][\"Name\"])
-		get_node(\"workbench/Control/Name\").text = Global.resources[currentItem][\"Name\"]
-		get_node(\"workbench/Control/Des\").text = Global.resources[currentItem][\"Des\"]
-		get_node(\"workbench/Control/Des\").text += \"\\n Cost: \" + str(Global.resources[currentItem][\"Cost\"])
-
 
 func _on_body_exited(body):
 	pass # Replace with function body.
@@ -229,7 +226,8 @@ shape = SubResource("RectangleShape2D_anpjv")
 [node name="shop" parent="Area2D" instance=ExtResource("7_jxqxq")]
 
 [node name="player" parent="." instance=ExtResource("4_rkwjr")]
-position = Vector2(606, 478)
+z_index = 1
+position = Vector2(549, 456)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
@@ -241,14 +239,17 @@ frame_progress = 0.176946
 script = ExtResource("8_qq20j")
 
 [node name="chest" type="Area2D" parent="."]
+light_mask = 2
+visibility_layer = 2
 z_index = 1
-position = Vector2(501, 731)
+position = Vector2(500, 736)
 collision_layer = 3
 collision_mask = 3
 script = SubResource("GDScript_1waxr")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="chest"]
+z_index = -1
 scale = Vector2(0.335938, 0.335938)
 texture = ExtResource("10_slfnr")
 

@@ -2,26 +2,38 @@ extends CanvasLayer
 
 var currentItem = 0
 var select = 0
+@onready var inventory = preload("res://assets/inventory/inventory.tres")
+@onready var wb = preload("res://assets/workbrench/WorkBenchTres.tres")
 
+func _ready():
+	wb.update_current_item_index(0)
+	showItem()
+	
 func _on_closebtn_pressed():
 	get_node("AnimationPlayer").play("TrainOut")
 	get_tree().paused = false
+	wb.update_current_item_index(0)
+	showItem()
 
-func switchItem(select):
-	for i in range(Global.resources.size()):
-		if select == i:
-			currentItem = select
-			get_node("Control/AnimSprite").play(Global.resources[currentItem]["Name"])
-			get_node("Control/Name").text = Global.resources[currentItem]["Name"]
-			get_node("Control/Des").text = Global.resources[currentItem]["Des"]
-			get_node("Control/Des").text += "\n Cost: " + str(Global.resources[currentItem]["Cost"])
+func showItem():
+	get_node("Control/Sprite2D").texture = wb.get_current_item().texture
+	get_node("Control/Name").text = wb.get_current_item().name
+	get_node("Control/Des").text = wb.get_current_item().description
+	get_node("Control/Des").text += "\n Цена: " + str(wb.get_current_item().cost)
 	
 func _on_next_pressed():
-	switchItem(currentItem + 1)
+	if (wb.currentItemIndex == wb.items.size() - 1):
+		wb.update_current_item_index(0)
+	else:
+		wb.update_current_item_index(wb.currentItemIndex + 1)
+	showItem()
 
 func _on_prev_pressed():
-	switchItem(currentItem - 1)
+	if (wb.currentItemIndex == 0):
+		wb.update_current_item_index(wb.items.size() - 1)
+	else:
+		wb.update_current_item_index(wb.currentItemIndex - 1)
+	showItem()
 
 func _on_buy_pressed():
-	pass
-	#get_node("Error").text = "Недостаточно монет"
+	inventory.insert(wb.get_current_item().inventoryItem)
