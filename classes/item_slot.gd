@@ -1,10 +1,12 @@
 extends Button
 
+class_name ItemSlot
 
 @onready var backgroundSprite: Sprite2D = $background
 @onready var container: CenterContainer = $CenterContainer
 
-var number
+
+
 var itemStackGUI: ItemStackGUI
 
 func insert(isg: ItemStackGUI):
@@ -17,3 +19,6 @@ func takeItem():
 	itemStackGUI = null
 	
 	return item
+
+func isEmpty():
+	return !itemStackGUI

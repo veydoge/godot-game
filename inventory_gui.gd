@@ -13,6 +13,10 @@ func update():
 	for i in range(min(inventory.slots.size(), slots.size())):
 		var inventorySlot: InventorySlot = inventory.slots[i]
 		
+		var callable = Callable(onSlotClicked)
+		callable = callable.bind(slots[i])
+		slots[i].pressed.connect(callable)
+		
 		if !inventorySlot.item: continue
 		
 		var itemStackGUI: ItemStackGUI = slots[i].itemStackGUI
@@ -22,9 +26,7 @@ func update():
 		itemStackGUI.inventorySlot = inventorySlot
 		itemStackGUI.update()
 		
-		var callable = Callable(onSlotClicked)
-		callable = callable.bind(slots[i])
-		itemStackGUI.pressed.connect(callable)
+		
 			
 func _ready():
 	update()
@@ -40,15 +42,30 @@ func close():
 	isOpen = false
 	closed.emit()
 	
-func connectSlots():
-	for slot in slots:
-		var callable = Callable(onSlotClicked)
-		callable = callable.bind(slot)
-		slot.slotButton.pressed.connect(onSlotClicked)
-		
 func onSlotClicked(slot):
+	
+	if slot.isEmpty() && itemInHand:
+		insertItemInSlot(slot)
+	
+		return
+		
+	if !itemInHand:
+		takeItemFromSlot(slot)
+	
+func takeItemFromSlot(slot):
 	itemInHand = slot.takeItem()
 	add_child(itemInHand)
+	move_child(itemInHand, 0)
+	updateItemInHand()
+	
+	
+func insertItemInSlot(slot):
+	var item = itemInHand
+	remove_child(itemInHand)
+	
+	itemInHand = null
+	
+	slot.insert(item)
 	
 func updateItemInHand():
 	if !itemInHand: return
@@ -56,3 +73,5 @@ func updateItemInHand():
 	
 func _input(event):
 	updateItemInHand()
+
+	
