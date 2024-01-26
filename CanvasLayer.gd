@@ -4,7 +4,8 @@ extends CanvasLayer
 
 func _input(event):
 	if (event.is_action_pressed("toggle_inventory")):
-		if inventory.isOpen:
-			inventory.close()
-		else:
-			inventory.open()
+		if (get_node("../Area2D/shop") as Shop).isShopOpen == false && (get_node("../chest/workbench") as Workbench).isWorkbenchOpen == false:
+			if inventory.isOpen:
+				inventory.close()
+			else:
+				inventory.open()

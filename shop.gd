@@ -1,5 +1,9 @@
 extends CanvasLayer
 
+class_name Shop
+
+var isShopOpen = false
+
 @onready var inventory = preload("res://assets/inventory/inventory.tres")
 @onready var shop = preload("res://assets/shop/shopTres.tres")
 
@@ -35,9 +39,9 @@ func _on_buy_pressed():
 	else:
 		get_node("Error").text = "Недостаточно монет"
 
-
 func _on_closebtn_pressed():
 	get_node("Anim").play("TransOut")
 	get_tree().paused = false
+	isShopOpen = false
 	shop.update_current_item_index(0)
 	showItem()

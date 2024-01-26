@@ -1,6 +1,6 @@
 extends Resource
 
-class_name Shop
+class_name ShopTres
 
 @export var items : Array[ShopItem]
 

@@ -1,7 +1,9 @@
 extends CanvasLayer
 
-var currentItem = 0
-var select = 0
+class_name Workbench
+
+var isWorkbenchOpen = false
+
 @onready var inventory = preload("res://assets/inventory/inventory.tres")
 @onready var wb = preload("res://assets/workbrench/WorkBenchTres.tres")
 
@@ -12,6 +14,7 @@ func _ready():
 func _on_closebtn_pressed():
 	get_node("AnimationPlayer").play("TrainOut")
 	get_tree().paused = false
+	isWorkbenchOpen = false
 	wb.update_current_item_index(0)
 	showItem()
 
