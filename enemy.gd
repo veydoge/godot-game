@@ -14,7 +14,7 @@ var can_take_damage = true
 func _ready():
 	dead = false
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	deal_with_damage()
 	update_health()
 	if !dead:

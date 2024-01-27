@@ -71,7 +71,7 @@ func updateItemInHand():
 	if !itemInHand: return
 	itemInHand.global_position = get_global_mouse_position() - itemInHand.size / 2
 	
-func _input(event):
+func _input(_event):
 	updateItemInHand()
 
 	

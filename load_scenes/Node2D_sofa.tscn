@@ -11,21 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://depglw2yf4s18" path="res://boilerEmpty-Sheet.png" id="7_q4bxh"]
 [ext_resource type="Script" path="res://Boiler.gd" id="8_qq20j"]
 [ext_resource type="Texture2D" uid="uid://bq7e2dlja5eta" path="res://сундук.png" id="10_slfnr"]
-[ext_resource type="PackedScene" path="res://workbench.tscn" id="11_lxis5"]
+[ext_resource type="PackedScene" uid="uid://cgos5hr0tgp5i" path="res://workbench.tscn" id="11_lxis5"]
 
 [sub_resource type="GDScript" id="GDScript_nuyg0"]
 script/source = "extends Node2D
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-func boiler():
-	pass
 "
 
 [sub_resource type="GDScript" id="GDScript_2laos"]

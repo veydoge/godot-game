@@ -33,3 +33,6 @@ func update_current_slot(slot: InventorySlot): # method for making a slot "activ
 	current_slot = slot
 	current_slot.texture = selected_image
 	current_slot_updated.emit()
+	
+func remove_slot_at(i):
+	slots.remove_at(i)
