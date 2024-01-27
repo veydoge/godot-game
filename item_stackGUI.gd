@@ -6,7 +6,7 @@ class_name ItemStackGUI
 @onready var itemsprite: TextureRect = $item2d
 @onready var amountlabel: Label = $Label
 
-var inventorySlot
+var inventorySlot : InventorySlot
 
 func update():
 	
