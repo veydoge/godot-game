@@ -8,11 +8,6 @@ func _ready():
 	showItem()
 
 func showItem():
-#	var shopItems = shop.items
-#	var inventorySlots = inventory.slots
-#	for item in shopItems:
-#		for slot in inventorySlots:
-#			if item == slot.
 	$Icon.texture = inventory.get_current_slot().item.texture
 	$Name.text = inventory.get_current_slot().item.name
 	#$Des.text = inventory.get_current_slot().item.description

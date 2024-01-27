@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Shop" load_steps=7 format=3 uid="uid://b0pr2144d71kl"]
+[gd_resource type="Resource" script_class="ShopTres" load_steps=7 format=3 uid="uid://b0pr2144d71kl"]
 
 [ext_resource type="Resource" uid="uid://dw1m12xkyfyx0" path="res://assets/shop/flaskYellow.tres" id="1_5yndk"]
 [ext_resource type="Resource" uid="uid://cyc0hwu61iuxv" path="res://assets/shop/flaskGreen.tres" id="2_ieva6"]

@@ -13,6 +13,9 @@ texture = ExtResource("2_k4h4w")
 script = ExtResource("1_tij6r")
 name = "Меч"
 description = "Меч для уничтожения монстров"
-cost = 0.0
+resource = {
+"Ветки": 4,
+"Камень": 5
+}
 texture = ExtResource("2_k4h4w")
 inventoryItem = SubResource("Resource_8lry4")
