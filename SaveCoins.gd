@@ -4,9 +4,8 @@ var path = "res://saveCoins.dat"
 var coin = 100
 
 func _ready():
-	load_coin()
-	if coin == 0:
-		coin = 1000
+	# load_coin()
+	coin = 1000
 	
 func save_coin():
 	var file = FileAccess.open(path, FileAccess.WRITE_READ)

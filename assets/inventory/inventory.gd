@@ -43,3 +43,4 @@ func updateSlot(index: int, inventorySlot: InventorySlot):
 	removeItemAtIndex(oldIndex)
 	
 	slots[index] = inventorySlot
+	
