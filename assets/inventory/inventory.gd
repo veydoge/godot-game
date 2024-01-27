@@ -9,7 +9,7 @@ var selected_image = preload("res://assets/inventory/icons/Inventory_Selected_Sl
 var default_image = preload("res://assets/inventory/icons/Inventory_Slot_1.png")
 
 @export var slots : Array[InventorySlot]
-
+var currentItemIndex: int
 var current_slot: InventorySlot
 
 func insert(item: InventoryItem):

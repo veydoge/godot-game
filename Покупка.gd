@@ -1,4 +1,4 @@
-extends TabBar
+extends Control
 
 @onready var inventory = preload("res://assets/inventory/inventory.tres")
 @onready var shop = preload("res://assets/shop/shopTres.tres")
@@ -8,10 +8,10 @@ func _ready():
 	showItem()
 
 func showItem():
-	$Control/Icon.texture = shop.get_current_item().texture
-	$Control/Name.text = shop.get_current_item().name
-	$Control/Des.text = shop.get_current_item().description
-	$Control/Des.text += "\n Цена: " + str(shop.get_current_item().cost)
+	$Icon.texture = shop.get_current_item().texture
+	$Name.text = shop.get_current_item().name
+	$Des.text = shop.get_current_item().description
+	$Des.text += "\n Цена: " + str(shop.get_current_item().cost)
 	
 func _on_next_pressed():
 	if (shop.currentItemIndex == shop.items.size() - 1):
