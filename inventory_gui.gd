@@ -13,6 +13,8 @@ func update():
 	for i in range(min(inventory.slots.size(), slots.size())):
 		var inventorySlot: InventorySlot = inventory.slots[i]
 		
+		slots[i].index = i
+			
 		var callable = Callable(onSlotClicked)
 		callable = callable.bind(slots[i])
 		slots[i].pressed.connect(callable)

@@ -34,5 +34,12 @@ func update_current_slot(slot: InventorySlot): # method for making a slot "activ
 	current_slot.texture = selected_image
 	current_slot_updated.emit()
 	
-func remove_slot_at(i):
-	slots.remove_at(i)
+func removeItemAtIndex(index: int):
+	slots[index] = InventorySlot.new()
+	
+	
+func updateSlot(index: int, inventorySlot: InventorySlot):
+	var oldIndex: int = slots.find(inventorySlot)
+	removeItemAtIndex(oldIndex)
+	
+	slots[index] = inventorySlot
