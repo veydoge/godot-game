@@ -8,9 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://b1ifmfx2liswj" path="res://item_slot.tscn" id="5_o4eug"]
 
 [node name="World" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_u11ad")
 
 [node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
 texture_filter = 1
 tile_set = ExtResource("1_6vgqx")
 cell_quadrant_size = 32
@@ -91,5 +93,13 @@ layout_mode = 2
 [node name="ItemSlot15" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("5_o4eug")]
 layout_mode = 2
 
+[connection signal="body_entered" from="TileMap/Tomato" to="TileMap/Tomato" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="TileMap/Tomato" to="TileMap/Tomato" method="_on_body_exited" flags=18]
+[connection signal="body_entered" from="TileMap/@Area2D@96297" to="TileMap/@Area2D@96297" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="TileMap/@Area2D@96297" to="TileMap/@Area2D@96297" method="_on_body_exited" flags=18]
+[connection signal="body_entered" from="TileMap/@Area2D@96298" to="TileMap/@Area2D@96298" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="TileMap/@Area2D@96298" to="TileMap/@Area2D@96298" method="_on_body_exited" flags=18]
+[connection signal="body_entered" from="TileMap/@Area2D@96299" to="TileMap/@Area2D@96299" method="_on_body_entered" flags=18]
+[connection signal="body_exited" from="TileMap/@Area2D@96299" to="TileMap/@Area2D@96299" method="_on_body_exited" flags=18]
 [connection signal="closed" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_closed"]
 [connection signal="opened" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_opened"]
