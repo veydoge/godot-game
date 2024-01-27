@@ -46,7 +46,7 @@ func close():
 	visible = false
 	isOpen = false
 	closed.emit()
-	
+
 func onSlotClicked(slot):
 	
 	if slot.isEmpty():
@@ -60,7 +60,7 @@ func onSlotClicked(slot):
 		return
 	if !itemInHand:
 		takeItemFromSlot(slot)
-	
+
 func takeItemFromSlot(slot):
 	itemInHand = slot.takeItem()
 	add_child(itemInHand)
@@ -84,12 +84,10 @@ func insertItemInSlot(slot):
 	itemInHand = null
 	
 	slot.insert(item)
-	
+
 func updateItemInHand():
 	if !itemInHand: return
 	itemInHand.global_position = get_global_mouse_position() - itemInHand.size / 2
-	
+
 func _input(_event):
 	updateItemInHand()
-
-	

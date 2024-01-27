@@ -85,7 +85,7 @@ libraries = {
 }
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 24.0
+offset_left = 32.0
 offset_top = 16.0
 offset_right = 344.0
 offset_bottom = 170.0
@@ -93,7 +93,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_6olvi")
 
 [node name="Closebtn" type="Button" parent="."]
 offset_left = 320.0
-offset_top = 18.0
+offset_top = 16.0
 offset_right = 344.0
 offset_bottom = 26.0
 theme_override_font_sizes/font_size = 5
@@ -104,50 +104,61 @@ text = "X
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 16.0
-offset_top = 58.0
-offset_right = 344.0
-offset_bottom = 162.0
+offset_left = 32.0
+offset_top = 34.0
+offset_right = 336.0
+offset_bottom = 170.0
+
+[node name="Res" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 88.0
+offset_right = 120.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 8
+text = "Необходимо:"
+horizontal_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
-position = Vector2(172, 26.8)
-scale = Vector2(1.25, 1.175)
+position = Vector2(166, 45)
+scale = Vector2(1.5, 1.25)
 texture = ExtResource("3_hcqpt")
 
 [node name="Name" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 144.0
-offset_top = -32.0
-offset_right = 194.0
-offset_bottom = -15.0
+offset_left = 120.0
+offset_top = -8.0
+offset_right = 198.0
+offset_bottom = 9.0
+scale = Vector2(1.02185, 1.27355)
 theme_override_font_sizes/font_size = 10
 horizontal_alignment = 1
 
 [node name="Des" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 80.0
-offset_top = 48.0
-offset_right = 264.0
+offset_left = 72.0
+offset_top = 72.0
+offset_right = 256.0
 offset_bottom = 88.0
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 8
 horizontal_alignment = 1
 
 [node name="Next" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 232.0
-offset_top = 24.0
-offset_right = 250.0
-offset_bottom = 40.0
+offset_left = 224.0
+offset_top = 47.0
+offset_right = 242.0
+offset_bottom = 63.0
 theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_l8fks")
 text = ">"
 
 [node name="Prev" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 88.0
-offset_top = 24.0
-offset_right = 106.0
-offset_bottom = 40.0
+offset_left = 78.0
+offset_top = 47.0
+offset_right = 96.0
+offset_bottom = 63.0
 theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_vndq5")
 text = "<"
@@ -159,9 +170,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -28.0
+offset_left = -23.0
 offset_top = 36.0
-offset_right = 36.0
+offset_right = 41.0
 offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -169,14 +180,21 @@ theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_ulody")
 text = "Купить"
 
-[node name="Res" type="Label" parent="."]
-offset_left = 16.0
-offset_top = 130.0
-offset_right = 112.0
-offset_bottom = 162.0
-theme_override_font_sizes/font_size = 8
-text = "Необходимо:"
-horizontal_alignment = 1
+[node name="Amount" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 103.0
+offset_right = 24.0
+offset_bottom = 112.0
+theme_override_font_sizes/font_size = 5
+
+[node name="Resource" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 104.0
+offset_right = 96.0
+offset_bottom = 112.0
+theme_override_font_sizes/font_size = 5
 
 [connection signal="pressed" from="Closebtn" to="." method="_on_closebtn_pressed"]
 [connection signal="pressed" from="Control/Next" to="." method="_on_next_pressed"]

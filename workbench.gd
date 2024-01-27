@@ -7,6 +7,7 @@ var isWorkbenchOpen = false
 @onready var inventory = preload("res://assets/inventory/inventory.tres")
 @onready var wb = preload("res://assets/workbrench/WorkBenchTres.tres")
 
+
 func _ready():
 	wb.update_current_item_index(0)
 	showItem()
@@ -22,7 +23,7 @@ func showItem():
 	get_node("Control/Sprite2D").texture = wb.get_current_item().texture
 	get_node("Control/Name").text = wb.get_current_item().name
 	get_node("Control/Des").text = wb.get_current_item().description
-	get_node("Control/Des").text += "\n Цена: " + str(wb.get_current_item().cost)
+	get_node("Control/Resource").text = str(wb.get_current_item().resource)
 	
 func _on_next_pressed():
 	if (wb.currentItemIndex == wb.items.size() - 1):
@@ -39,4 +40,11 @@ func _on_prev_pressed():
 	showItem()
 
 func _on_buy_pressed():
-	inventory.insert(wb.get_current_item().inventoryItem)
+	var dic = wb.get_current_item().resource
+	for key in dic:
+		var value = dic[key]
+		if key == wb.get_current_item().name && value <= inventory.get_current_slot().amount:
+			inventory.insert(wb.get_current_item().inventoryItem)
+			inventory.get_current_slot().amount - value
+		else:
+			print("жопа")

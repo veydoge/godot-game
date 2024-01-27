@@ -23,7 +23,7 @@ func _physics_process(_delta):
 			var dir = to_local(nav.get_next_path_position()).normalized()
 			velocity = dir * speed
 			animations.play("jump")
-			move_and_slide()
+			move_and_collide(velocity * _delta)
 		else:
 			animations.play("jump")
 	if dead:

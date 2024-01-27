@@ -26,7 +26,7 @@ layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 1
-layer_1/tile_data = PackedInt32Array(2097194, 9, 0, 2097198, 9, 0, 1638439, 1, 65536, 1769517, 1, 65536, 1966118, 1, 65536, 1835045, 1, 65536)
+layer_1/tile_data = PackedInt32Array(2097194, 9, 0, 2097198, 9, 0, 1638439, 1, 65536, 1769517, 1, 65536, 1835045, 1, 65536, 2031653, 1, 65536)
 
 [node name="Player" parent="." instance=ExtResource("3_wu8vn")]
 

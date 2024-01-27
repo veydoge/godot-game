@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://b4fh60ynjeawu"]
+[gd_resource type="Resource" script_class="WorkBenchItem" load_steps=4 format=3 uid="uid://b4fh60ynjeawu"]
 
 [ext_resource type="Resource" uid="uid://d2bcjqygxdagw" path="res://assets/inventory/pickaxe.tres" id="1_e8hdr"]
 [ext_resource type="Script" path="res://WorkBenchItem.gd" id="2_plqoo"]
@@ -8,6 +8,9 @@
 script = ExtResource("2_plqoo")
 name = "Кирка"
 description = "Кирка для добываемя камня"
-cost = 0.0
+resource = {
+"Ветки": 2,
+"Камень": 2
+}
 texture = ExtResource("3_uss2p")
 inventoryItem = ExtResource("1_e8hdr")
