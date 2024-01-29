@@ -39,7 +39,6 @@ process_mode = 3
 script = ExtResource("4_4iteh")
 
 [node name="InventoryGUI" parent="CanvasLayer" instance=ExtResource("5_7rtr6")]
-visible = false
 offset_left = -92.0
 offset_top = -56.0
 offset_right = 92.0

@@ -9,6 +9,7 @@
 script = ExtResource("2_a8u4k")
 name = "Tomato"
 texture = ExtResource("2_75di4")
+maxAmountPrStack = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mdwhm"]
 resource_local_to_scene = true

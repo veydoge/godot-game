@@ -3,28 +3,28 @@
 [ext_resource type="Resource" uid="uid://c0vindenac7es" path="res://assets/inventory/axe.tres" id="1_u0wwp"]
 [ext_resource type="Script" path="res://InventorySlot.gd" id="2_dm4qr"]
 [ext_resource type="Script" path="res://assets/inventory/inventory.gd" id="3_qqr6t"]
-[ext_resource type="Texture2D" uid="uid://dboed75ndharp" path="res://assets/inventory/icons/Inventory_Slot_1.png" id="4_2ey2n"]
 [ext_resource type="Resource" uid="uid://d2bcjqygxdagw" path="res://assets/inventory/pickaxe.tres" id="4_3rtlb"]
+[ext_resource type="Resource" uid="uid://cquurnew6pm0n" path="res://assets/inventory/tomato.tres" id="5_0o10j"]
 
 [sub_resource type="Resource" id="Resource_ts76p"]
 script = ExtResource("2_dm4qr")
-texture = ExtResource("4_2ey2n")
 item = ExtResource("1_u0wwp")
 amount = 1
 
 [sub_resource type="Resource" id="Resource_v8tqh"]
 script = ExtResource("2_dm4qr")
-texture = ExtResource("4_2ey2n")
 item = ExtResource("4_3rtlb")
 amount = 1
 
 [sub_resource type="Resource" id="Resource_3uqjh"]
 script = ExtResource("2_dm4qr")
-amount = 0
+item = ExtResource("5_0o10j")
+amount = 3
 
 [sub_resource type="Resource" id="Resource_qri47"]
 script = ExtResource("2_dm4qr")
-amount = 0
+item = ExtResource("5_0o10j")
+amount = 5
 
 [sub_resource type="Resource" id="Resource_syjy8"]
 script = ExtResource("2_dm4qr")

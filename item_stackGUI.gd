@@ -26,7 +26,8 @@ func update_bottom_inventory_slot():
 	itemsprite.visible = true
 	itemsprite.texture = inventorySlot.item.texture
 	
-	backgroundSprite.texture = inventorySlot.texture
+	if (inventorySlot.texture != null): # inventorySlot.texture can be edited when slot is activated, but it has default texture
+		backgroundSprite.texture = inventorySlot.texture
 	
 	if inventorySlot.amount > 1:
 		amountlabel.visible = true

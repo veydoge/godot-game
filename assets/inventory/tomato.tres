@@ -7,3 +7,4 @@
 script = ExtResource("1_u60w3")
 name = "tomato"
 texture = ExtResource("2_h8g26")
+maxAmountPrStack = 10

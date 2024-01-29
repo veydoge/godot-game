@@ -12,8 +12,9 @@ var default_image = preload("res://assets/inventory/icons/Inventory_Slot_1.png")
 var currentItemIndex: int
 var current_slot: InventorySlot
 
+
 func insert(item: InventoryItem):
-	var itemSlots = slots.filter(func(slot): return slot.item == item)
+	var itemSlots = slots.filter(func(slot): return slot.item == item && slot.amount < slot.item.maxAmountPrStack)
 	if !itemSlots.is_empty():
 		itemSlots[0].amount += 1
 	else:
@@ -37,6 +38,13 @@ func update_current_slot(slot: InventorySlot): # method for making a slot "activ
 func removeItemAtIndex(index: int):
 	slots[index] = InventorySlot.new()
 	
+	
+func removeSlot(inventorySlot: InventorySlot):
+	var index = slots.find(inventorySlot)
+	if index < 0: return
+	
+	
+	slots[index] = InventorySlot.new()
 	
 func updateSlot(index: int, inventorySlot: InventorySlot):
 	var oldIndex: int = slots.find(inventorySlot)

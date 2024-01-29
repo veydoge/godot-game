@@ -25,6 +25,7 @@ func insert(isg: ItemStackGUI):
 	
 func takeItem():
 	var item = itemStackGUI
+	inventory.removeSlot(itemStackGUI.inventorySlot)
 	container.remove_child(itemStackGUI)
 	itemStackGUI = null
 	

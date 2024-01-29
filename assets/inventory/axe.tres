@@ -7,3 +7,4 @@
 script = ExtResource("1_fxmll")
 name = "axe"
 texture = ExtResource("2_xwjg5")
+maxAmountPrStack = 0
