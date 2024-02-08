@@ -15,8 +15,9 @@ func update():
 		
 		slots[i].index = i
 
-		
-		if !inventorySlot.item: continue
+		if !inventorySlot.item:
+			slots[i].remove(slots[i].itemStackGUI)
+			continue
 		
 		var itemStackGUI: ItemStackGUI = slots[i].itemStackGUI
 		if !itemStackGUI:

@@ -21,9 +21,9 @@ func _on_closebtn_pressed():
 
 func showItem():
 	get_node("Control/Sprite2D").texture = wb.get_current_item().texture
-	get_node("Control/Name").text = wb.get_current_item().name
+	get_node("Control/Title").text = wb.get_current_item().name
 	get_node("Control/Des").text = wb.get_current_item().description
-	get_node("Control/Resource").text = str(wb.get_current_item().resource)
+	get_node("Control/Resource").text = str(wb.get_current_item().resource).replace("{", "").replace("}", "").replace("\"", "")
 	
 func _on_next_pressed():
 	if (wb.currentItemIndex == wb.items.size() - 1):
@@ -41,10 +41,26 @@ func _on_prev_pressed():
 
 func _on_buy_pressed():
 	var dic = wb.get_current_item().resource
+	var hasAllResources
 	for key in dic:
 		var value = dic[key]
-		if key == wb.get_current_item().name && value <= inventory.get_current_slot().amount:
-			inventory.insert(wb.get_current_item().inventoryItem)
-			inventory.get_current_slot().amount - value
-		else:
-			print("жопа")
+		for item in inventory.slots:
+			hasAllResources = true
+			var it = item.item
+			var resource
+			var count = item.amount
+			
+			if it == null:
+				get_node("Control/Title").text = "Нет ресурсов"
+			else:
+				resource = it.name
+			
+			if key == resource && value <= count:	
+				hasAllResources = false
+				item.amount -= value
+				if item.amount == 0:
+					inventory.remove_item(it)
+				break
+
+	if !hasAllResources:
+		inventory.insert(wb.get_current_item().inventoryItem)

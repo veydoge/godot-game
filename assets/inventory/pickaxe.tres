@@ -7,3 +7,4 @@
 script = ExtResource("1_up285")
 name = "pickaxe"
 texture = ExtResource("2_6bmol")
+maxAmountPrStack = 1

@@ -23,7 +23,7 @@ func insert(item: InventoryItem):
 			emptySlots[0].amount = 1
 			emptySlots[0].texture = default_image
 	updated.emit()
-
+	
 func get_current_slot():
 	return current_slot
 
@@ -55,4 +55,5 @@ func remove_item(item: InventoryItem):
 		if slot.item == item:
 			deletedSlot = slot
 			break
-	slots.erase(deletedSlot)
+	removeSlot(deletedSlot)
+	updated.emit()

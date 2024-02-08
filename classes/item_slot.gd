@@ -19,6 +19,10 @@ func insert(isg: ItemStackGUI):
 	
 	inventory.updateSlot(index, itemStackGUI.inventorySlot)
 	
+func remove(isg: ItemStackGUI):
+	
+	container.remove_child(itemStackGUI) 
+	itemStackGUI = null
 	
 	
 func takeItem():

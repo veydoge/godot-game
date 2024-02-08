@@ -6,8 +6,9 @@
 
 [sub_resource type="Resource" id="Resource_elpwy"]
 script = ExtResource("2_urxaf")
-name = "Stone"
+name = "Камень"
 texture = ExtResource("4_0evr5")
+maxAmountPrStack = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1k7j"]
 size = Vector2(60, 56)

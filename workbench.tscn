@@ -124,7 +124,7 @@ position = Vector2(166, 45)
 scale = Vector2(1.5, 1.25)
 texture = ExtResource("3_hcqpt")
 
-[node name="Name" type="Label" parent="Control"]
+[node name="Title" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 120.0
 offset_top = -8.0

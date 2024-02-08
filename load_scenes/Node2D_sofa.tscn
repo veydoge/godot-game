@@ -18,10 +18,10 @@
 script/source = "extends Area2D
 
 func _on_body_entered(body):
-	if body.name == \"player\":
+	if body.name == \"Player\":
 		get_tree().paused = true
 		$shop.isShopOpen = true
-		get_node(\"../player/AnimatedSprite2D\").play(\"idle\")
+		get_node(\"../Player/AnimatedSprite2D\").play(\"idle\")
 		get_node(\"shop/Anim\").play(\"TransIn\")
 "
 
@@ -68,10 +68,10 @@ animations = [{
 script/source = "extends Area2D
 
 func _on_body_entered(body):
-	if body.name == \"player\":
+	if body.name == \"Player\":
 		get_tree().paused = true
 		$workbench.isWorkbenchOpen = true
-		get_node(\"../player/AnimatedSprite2D\").play(\"idle\")
+		get_node(\"../Player/AnimatedSprite2D\").play(\"idle\")
 		get_node(\"workbench/AnimationPlayer\").play(\"TrainIn\")
 "
 
@@ -83,7 +83,6 @@ script = ExtResource("1_6jmi5")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
-texture_filter = 1
 tile_set = ExtResource("1_6vgqx")
 cell_quadrant_size = 32
 format = 2
@@ -100,14 +99,14 @@ layer_1/tile_data = PackedInt32Array(1900585, 196614, 1, 1900589, 196614, 1, 190
 layer_2/name = "earth"
 layer_2/enabled = true
 layer_2/modulate = Color(1, 1, 1, 1)
-layer_2/y_sort_enabled = false
+layer_2/y_sort_enabled = true
 layer_2/y_sort_origin = 0
 layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(2752543, 65542, 12, 2687007, 65542, 11, 2687006, 6, 11, 2752542, 6, 12, 1507357, 2, 65536, 1769498, 2, 65536, 1376289, 2, 65536, 1441833, 2, 131072, 2097182, 2, 131072, 2228275, 2, 131072, 1900596, 2, 65536, 1572914, 2, 65536, 2490413, 2, 65536, 1769502, 2, 65536)
 layer_3/name = "flower"
 layer_3/enabled = true
 layer_3/modulate = Color(1, 1, 1, 1)
-layer_3/y_sort_enabled = false
+layer_3/y_sort_enabled = true
 layer_3/y_sort_origin = 0
 layer_3/z_index = 1
 layer_3/tile_data = PackedInt32Array()
@@ -115,7 +114,7 @@ layer_3/tile_data = PackedInt32Array()
 [node name="enemy" parent="." node_paths=PackedStringArray("pl") instance=ExtResource("5_2pm0o")]
 z_index = 1
 position = Vector2(733, 449)
-pl = NodePath("../player")
+pl = NodePath("../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -203,9 +202,9 @@ shape = SubResource("RectangleShape2D_anpjv")
 
 [node name="shop" parent="Area2D" instance=ExtResource("7_jxqxq")]
 
-[node name="player" parent="." instance=ExtResource("4_rkwjr")]
+[node name="Player" parent="." instance=ExtResource("4_rkwjr")]
 y_sort_enabled = true
-position = Vector2(549, 456)
+position = Vector2(562, 514)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1

@@ -7,8 +7,9 @@
 
 [sub_resource type="Resource" id="Resource_daiqa"]
 script = ExtResource("2_1r6b2")
-name = "Wood"
+name = "Ветка"
 texture = ExtResource("3_gs3bo")
+maxAmountPrStack = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58fum"]
 size = Vector2(53, 55.5)

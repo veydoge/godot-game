@@ -29,6 +29,7 @@ func sortItemsForSell():
 		$Des.visible = true
 		$Sell.visible = true
 		$Icon.visible = true
+		$Amount.visible = true
 		currentItemIndex = 0
 		currentItem = itemsForSell.keys()[currentItemIndex]
 		currentItemAmount = itemsForSell[currentItem]
@@ -41,6 +42,7 @@ func sortItemsForSell():
 		$Des.visible = false
 		$Sell.visible = false
 		$Icon.visible = false
+		$Amount.visible = false
 		
 func showItem():
 	$Icon.texture = currentItem.inventoryItem.texture
@@ -69,8 +71,10 @@ func _on_prev_pressed():
 func _on_closebtn_pressed():
 	get_node("../../Anim").play("TransOut")
 	get_tree().paused = false
+	(get_node("../..") as Shop).isShopOpen = false
 	currentItemIndex = 0
-	currentItem = itemsForSell.keys()[currentItemIndex]
+	if(itemsForSell.keys().size() != 0):
+		currentItem = itemsForSell.keys()[currentItemIndex]
 	showItem()
 
 func _on_sell_pressed():
@@ -78,9 +82,19 @@ func _on_sell_pressed():
 		inventory.remove_item(currentItem.inventoryItem)
 		itemsForSell.erase(currentItem)
 	else:
-		var slotsWithThisItem = inventory.slots.filter(func(slot): return slot.item.name == currentItem.name)
-		slotsWithThisItem[slotsWithThisItem.size() - 1].amount -= 1
+		var slotsWithThisItem = []
+		for slot in inventory.slots:
+			if slot.item != null:
+				if slot.item.name == currentItem.name:
+					slotsWithThisItem.append(slot)
+					
+		
 		currentItemAmount -= 1
+		if inventory.slots[inventory.slots.find(slotsWithThisItem[slotsWithThisItem.size() - 1])].amount == 1:
+			inventory.removeSlot(inventory.slots[inventory.slots.find(slotsWithThisItem[slotsWithThisItem.size() - 1])])
+		else:	
+			inventory.slots[inventory.slots.find(slotsWithThisItem[slotsWithThisItem.size() - 1])].amount -= 1
+		inventory.updated.emit()
 		
 	if (itemsForSell.keys().size() == 0):
 		$Error.visible = true
@@ -90,5 +104,7 @@ func _on_sell_pressed():
 		$Des.visible = false
 		$Sell.visible = false
 		$Icon.visible = false
+		$Amount.visible = false
 	else:
+		$Amount.visible = true
 		$Amount.text = "У вас %s штук" % currentItemAmount

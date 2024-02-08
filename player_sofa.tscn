@@ -250,7 +250,7 @@ _data = {
 "sword": SubResource("Animation_ay8ct")
 }
 
-[node name="player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_stgqi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
