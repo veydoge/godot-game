@@ -21,8 +21,8 @@ func _ready():
 
 	
 	
-	for i in range(projectTilesRes.x):
-		for j in range(projectTilesRes.y):
+	for i in range(-2, projectTilesRes.x + 2, 1):
+		for j in range(-2, projectTilesRes.y + 2, 1):
 			set_cell(0, Vector2(i, j), 6, Vector2(6, 8), 0)                                                                                                                                                                                                                                                                                                                                                                                                             
 
 	
@@ -56,7 +56,7 @@ func make_an_island(x, y):
 	for i in range(width):
 		for j in range(height):
 			set_cell(0, Vector2(x + i, y + j), 0, Vector2(0, 0), 0)
-			
+
 	
 
 	
@@ -110,7 +110,7 @@ func check_connection_existed(connections, connectionCheck):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func connect_rooms():
 	for point in GraphPoints.get_point_ids():
-		await confirmationCheck
+		
 		var currentPos = GraphPoints.get_point_position(point)
 		currentPos.x = int(currentPos.x / 16)
 		currentPos.y = int(currentPos.y / 16)
@@ -148,7 +148,7 @@ func connect_rooms():
 
 				set_cell(0, currentPos, 6, Vector2i(6, 13), 0)
 			GraphPoints.disconnect_points(point, connectedPoint)
-		await get_tree().create_timer(1).timeout
+		
 			
 
 			
