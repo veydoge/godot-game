@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=21 format=3 uid="uid://81gov05ovedi"]
+[gd_resource type="Resource" script_class="Inventory" load_steps=20 format=3 uid="uid://81gov05ovedi"]
 
 [ext_resource type="Resource" uid="uid://c0vindenac7es" path="res://assets/inventory/axe.tres" id="1_u0wwp"]
 [ext_resource type="Script" path="res://InventorySlot.gd" id="2_dm4qr"]
 [ext_resource type="Script" path="res://assets/inventory/inventory.gd" id="3_qqr6t"]
 [ext_resource type="Resource" uid="uid://d2bcjqygxdagw" path="res://assets/inventory/pickaxe.tres" id="4_3rtlb"]
-[ext_resource type="Resource" uid="uid://cquurnew6pm0n" path="res://assets/inventory/tomato.tres" id="5_0o10j"]
 
 [sub_resource type="Resource" id="Resource_ts76p"]
 script = ExtResource("2_dm4qr")
@@ -18,13 +17,11 @@ amount = 1
 
 [sub_resource type="Resource" id="Resource_3uqjh"]
 script = ExtResource("2_dm4qr")
-item = ExtResource("5_0o10j")
-amount = 3
+amount = 0
 
-[sub_resource type="Resource" id="Resource_qri47"]
+[sub_resource type="Resource" id="Resource_dyjxh"]
 script = ExtResource("2_dm4qr")
-item = ExtResource("5_0o10j")
-amount = 5
+amount = 0
 
 [sub_resource type="Resource" id="Resource_syjy8"]
 script = ExtResource("2_dm4qr")
@@ -72,4 +69,4 @@ amount = 0
 
 [resource]
 script = ExtResource("3_qqr6t")
-slots = Array[ExtResource("2_dm4qr")]([SubResource("Resource_ts76p"), SubResource("Resource_v8tqh"), SubResource("Resource_3uqjh"), SubResource("Resource_qri47"), SubResource("Resource_syjy8"), SubResource("Resource_pl3ge"), SubResource("Resource_w3kf4"), SubResource("Resource_6v7c0"), SubResource("Resource_k181m"), SubResource("Resource_eoe64"), SubResource("Resource_2vp33"), SubResource("Resource_ltshp"), SubResource("Resource_drtx4"), SubResource("Resource_gmpnf"), SubResource("Resource_m1m2b")])
+slots = Array[ExtResource("2_dm4qr")]([SubResource("Resource_ts76p"), SubResource("Resource_v8tqh"), SubResource("Resource_3uqjh"), SubResource("Resource_dyjxh"), SubResource("Resource_syjy8"), SubResource("Resource_pl3ge"), SubResource("Resource_w3kf4"), SubResource("Resource_6v7c0"), SubResource("Resource_k181m"), SubResource("Resource_eoe64"), SubResource("Resource_2vp33"), SubResource("Resource_ltshp"), SubResource("Resource_drtx4"), SubResource("Resource_gmpnf"), SubResource("Resource_m1m2b")])

@@ -8,7 +8,7 @@
 script = ExtResource("1_jewoi")
 name = "Зелёное зелье"
 texture = ExtResource("2_26lpl")
-maxAmountPrStack = 1
+maxAmountPrStack = 3
 
 [resource]
 script = ExtResource("1_4ebsx")

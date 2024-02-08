@@ -6,8 +6,6 @@ class_name ItemSlot
 @onready var container: CenterContainer = $CenterContainer
 @onready var inventory: Inventory = preload("res://assets/inventory/inventory.tres") 
 
-
-
 var itemStackGUI: ItemStackGUI
 var index: int
 

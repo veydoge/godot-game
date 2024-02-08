@@ -28,12 +28,13 @@ func _on_prev_pressed():
 	showItem()
 
 func _on_buy_pressed():
-	if SaveCoins.coin > shop.get_current_item().cost:
+	$Error.text = ""
+	if SaveCoins.coin >= shop.get_current_item().cost:
 		SaveCoins.coin -= shop.get_current_item().cost
 		inventory.insert(shop.get_current_item().inventoryItem)
 		SaveCoins.save_coin()
 	else:
-		get_node("Error").text = "Недостаточно монет"
+		$Error.text = "Недостаточно монет"
 
 
 func _on_closebtn_pressed():

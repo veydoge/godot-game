@@ -25,7 +25,6 @@ func update():
 		itemStackGUI.inventorySlot = inventorySlot
 		itemStackGUI.update()
 		
-
 func connectSlots():
 	for i in range(min(inventory.slots.size(), slots.size())):
 		var callable = Callable(onSlotClicked)
