@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://flj18pfj0ixl"]
+[gd_scene load_steps=6 format=3 uid="uid://flj18pfj0ixl"]
 
+[ext_resource type="Script" path="res://generated_tiles.gd" id="1_iqn5b"]
 [ext_resource type="TileSet" uid="uid://chch7qij7mj4j" path="res://summertileset.tres" id="1_wju5p"]
 [ext_resource type="Script" path="res://TileMap.gd" id="2_8vaec"]
 [ext_resource type="PackedScene" uid="uid://mrd02wmp5bsa" path="res://player.tscn" id="3_xjxw2"]
 [ext_resource type="Script" path="res://GraphDrawer.gd" id="4_4kqu4"]
 
 [node name="GeneratedTiles" type="Node2D"]
+script = ExtResource("1_iqn5b")
 
 [node name="GraphDrawer" type="Node2D" parent="."]
 z_index = 2
@@ -16,12 +18,10 @@ tile_set = ExtResource("1_wju5p")
 format = 2
 script = ExtResource("2_8vaec")
 
-[node name="Player" parent="." instance=ExtResource("3_xjxw2")]
+[node name="player" parent="." instance=ExtResource("3_xjxw2")]
 position = Vector2(191, 103)
-collision_layer = 0
-collision_mask = 0
 
-[node name="Camera2D" parent="Player" index="1"]
+[node name="Camera2D" parent="player" index="1"]
 zoom = Vector2(0.32, 0.32)
 
-[editable path="Player"]
+[editable path="player"]

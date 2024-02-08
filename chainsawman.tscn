@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://kbiovmx0a15a"]
+
+[ext_resource type="Texture2D" uid="uid://cnplio8ejfvvy" path="res://sawman1.png" id="1_0fe0t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kj3yo"]
+size = Vector2(24, 28)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d81l2"]
+radius = 188.322
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0fe0t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_kj3yo")
+
+[node name="enemy_hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_d81l2")

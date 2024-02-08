@@ -4,6 +4,15 @@ const speed = 200
 
 @onready var animatedSprite : AnimatedSprite2D = $AnimatedSprite2D
 
+@onready var tileMap : TileMap = $"../TileMap"
+
+
+func _ready() -> void:
+	#var spawnPos = tileMap.RoomArray[0].center
+	#self.position = spawnPos
+	pass
+	
+
 func _physics_process(delta):
 	if (velocity.x == 0):
 		animatedSprite.play("idle")

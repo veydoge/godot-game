@@ -260,13 +260,11 @@ sprite_frames = SubResource("SpriteFrames_5pd80")
 animation = &"downmove"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 light_mask = 3
 visibility_layer = 3
 shape = SubResource("CircleShape2D_4c21c")
 
 [node name="player_hitbox" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox"]
 position = Vector2(1, 0)
