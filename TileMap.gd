@@ -5,6 +5,7 @@ var projectTilesRes
 var GraphPoints : AStar2D
 var RoomArray = []
 var RoomGraph = []
+var portalPos
 
 # Called when the node enters the scene tree for the first time.
 
@@ -30,7 +31,10 @@ func _ready():
 		make_an_island(randi_range(0, projectTilesRes.x - 14), randi_range(0, projectTilesRes.y - 14))
 	
 	$"../GraphDrawer".GraphPoints = GraphPoints
-
+		
+	connect_rooms()
+	make_portal()
+	generate_decorations()
 	
 	
 	
@@ -103,6 +107,21 @@ func check_connection_existed(connections, connectionCheck):
 		if ((connection[0] == connectionCheck[0] and connection[1] == connectionCheck[1]) or (connection[0] == connectionCheck[1]) and connection[1] == connectionCheck[0]):
 			return true
 	return false
+	
+func make_portal():
+	portalPos = RoomArray[1].center
+	portalPos.x = int(portalPos.x / 16)
+	portalPos.y = int(portalPos.y / 16)
+	set_cell(0, portalPos, 3, Vector2i(0, 0), 1)
+	
+func generate_decorations():
+	for room in RoomArray:
+		var randomPosInRoom = room.position
+		randomPosInRoom.x = randomPosInRoom.x + randi_range(0, room.width)
+		randomPosInRoom.y = randomPosInRoom.y + randi_range(0, room.height)
+		if (randomPosInRoom == portalPos): continue
+		set_cell(0, randomPosInRoom, 2, Vector2(0, 0 ), randi_range(1, 2))
+		
 	
 		
 

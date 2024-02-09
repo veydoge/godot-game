@@ -11,7 +11,9 @@ func _draw():
 #				var positionPoint = GraphPoints.get_point_position(pointId)
 #				var positionConnectedPoint = GraphPoints.get_point_position(connectedPointId)
 #				draw_line(positionPoint, positionConnectedPoint, Color.RED, 2)
-	$"../TileMap".connect_rooms()
+	#$"../TileMap".connect_rooms()
+	#$"../TileMap".make_portal()
+	#$"../TileMap".generate_decorations()
 
 	
 

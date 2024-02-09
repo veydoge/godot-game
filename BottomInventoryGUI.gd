@@ -8,7 +8,9 @@ func update():
 	for i in range(5):
 		var inventorySlot: InventorySlot = inventory.slots[i]
 		
-		if !inventorySlot.item: continue
+		if !inventorySlot.item: 
+			slots[i].remove(slots[i].itemStackGUI)
+			continue
 		
 		var itemStackGUI: ItemStackGUI = slots[i].itemStackGUI
 		if !itemStackGUI:

@@ -57,6 +57,7 @@ func _physics_process(_delta):
 	update_health()
 
 func player():
+	$CollisionShape2D2
 	pass
 
 func update_health(): 

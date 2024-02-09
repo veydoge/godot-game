@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=15 format=3 uid="uid://chch7qij7mj4j"]
+[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://chch7qij7mj4j"]
 
 [ext_resource type="Texture2D" uid="uid://dhhy351r5326e" path="res://sprite/stones.png" id="1_4d1we"]
 [ext_resource type="PackedScene" uid="uid://diui1glh7duqx" path="res://tomato.tscn" id="1_hj21b"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://s41s1r34hdlc" path="res://stone.tscn" id="3_rwl7v"]
 [ext_resource type="PackedScene" uid="uid://mata51t650ff" path="res://tree.tscn" id="3_ttjdw"]
 [ext_resource type="Texture2D" uid="uid://c0dyfo2pcw20h" path="res://sprite/sprite_packs/Tiny Wonder Forest 1.0/tilemaps/summer tilemap.png" id="4_03k0m"]
+[ext_resource type="PackedScene" uid="uid://bb6pj6400jmwd" path="res://portal.tscn" id="5_hmlwp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ocsk"]
 texture = ExtResource("1_4d1we")
@@ -30,6 +31,10 @@ scenes/1/scene = ExtResource("1_hj21b")
 resource_name = "Destroyables"
 scenes/1/scene = ExtResource("3_ttjdw")
 scenes/2/scene = ExtResource("3_rwl7v")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_vpytg"]
+resource_name = "portal"
+scenes/1/scene = ExtResource("5_hmlwp")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_rg4yb"]
 vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -495,3 +500,4 @@ sources/9 = SubResource("TileSetAtlasSource_20ux0")
 sources/1 = SubResource("TileSetScenesCollectionSource_etxes")
 sources/2 = SubResource("TileSetScenesCollectionSource_kjlt1")
 sources/0 = SubResource("TileSetAtlasSource_0ocsk")
+sources/3 = SubResource("TileSetScenesCollectionSource_vpytg")

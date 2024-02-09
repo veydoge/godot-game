@@ -70,12 +70,13 @@ func _on_prev_pressed():
 
 func _on_closebtn_pressed():
 	get_node("../../Anim").play("TransOut")
+	get_parent().get_parent().get_parent().get_parent().get_node("BottomInventory").visible = true
 	get_tree().paused = false
 	(get_node("../..") as Shop).isShopOpen = false
 	currentItemIndex = 0
 	if(itemsForSell.keys().size() != 0):
 		currentItem = itemsForSell.keys()[currentItemIndex]
-	showItem()
+		showItem()
 
 func _on_sell_pressed():
 	if (currentItemAmount == 1):

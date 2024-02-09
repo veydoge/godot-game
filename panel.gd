@@ -9,5 +9,5 @@ func _process(delta):
 	visible = true
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://Node2D_sofa.tscn")
+	get_tree().change_scene_to_file("res://load_scenes/Node2D_sofa.tscn")
 	self.queue_free()

@@ -1,11 +1,11 @@
 extends "res://classes/destroyable.gd"
 
 func _on_body_entered(body):
-	if body.name == "player":
+	if body.name == "Player":
 		isPlayerNear = true
 
 func _on_body_exited(body):
-	if body.name == "player":
+	if body.name == "Player":
 		isPlayerNear = false
 
 func _input(event):

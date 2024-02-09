@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://flj18pfj0ixl"]
+[gd_scene load_steps=10 format=3 uid="uid://flj18pfj0ixl"]
 
 [ext_resource type="Script" path="res://generated_tiles.gd" id="1_iqn5b"]
 [ext_resource type="TileSet" uid="uid://chch7qij7mj4j" path="res://summertileset.tres" id="1_wju5p"]
 [ext_resource type="Script" path="res://TileMap.gd" id="2_8vaec"]
-[ext_resource type="PackedScene" uid="uid://mrd02wmp5bsa" path="res://player.tscn" id="3_xjxw2"]
 [ext_resource type="Script" path="res://GraphDrawer.gd" id="4_4kqu4"]
+[ext_resource type="PackedScene" uid="uid://1m5kh5r6qrxw" path="res://player_sofa.tscn" id="5_15j6s"]
+[ext_resource type="Script" path="res://CanvasLayer.gd" id="6_kykjg"]
+[ext_resource type="PackedScene" uid="uid://dodke3emyt7xy" path="res://inventory_gui.tscn" id="7_fh214"]
+[ext_resource type="PackedScene" uid="uid://b1ifmfx2liswj" path="res://item_slot.tscn" id="8_53d1y"]
+[ext_resource type="PackedScene" uid="uid://dxnnrv23pfecc" path="res://bottom_inventory_gui.tscn" id="9_riviu"]
 
 [node name="GeneratedTiles" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_iqn5b")
 
 [node name="GraphDrawer" type="Node2D" parent="."]
@@ -14,14 +19,115 @@ z_index = 2
 script = ExtResource("4_4kqu4")
 
 [node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
 tile_set = ExtResource("1_wju5p")
 format = 2
 script = ExtResource("2_8vaec")
 
-[node name="player" parent="." instance=ExtResource("3_xjxw2")]
-position = Vector2(191, 103)
+[node name="Player" parent="." instance=ExtResource("5_15j6s")]
+position = Vector2(159, 82)
 
-[node name="Camera2D" parent="player" index="1"]
-zoom = Vector2(0.32, 0.32)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("6_kykjg")
 
-[editable path="player"]
+[node name="InventoryGUI" parent="CanvasLayer" instance=ExtResource("7_fh214")]
+visible = false
+offset_left = -92.0
+offset_top = -56.0
+offset_right = 92.0
+offset_bottom = 56.0
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/InventoryGUI"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 180.0
+offset_bottom = 109.0
+columns = 5
+
+[node name="ItemSlot" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("8_53d1y")]
+layout_mode = 2
+
+[node name="ItemSlot2" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("8_53d1y")]
+layout_mode = 2
+
+[node name="ItemSlot3" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("8_53d1y")]
+layout_mode = 2
+
+[node name="ItemSlot4" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("8_53d1y")]
+layout_mode = 2
+
+[node name="ItemSlot5" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("8_53d1y")]
+layout_mode = 2
+
+[node name="ItemSlot6" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("8_53d1y")]
+layout_mode = 2
+
+[node name="ItemSlot7" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("8_53d1y")]
+layout_mode = 2
+
+[node name="ItemSlot8" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("8_53d1y")]
+layout_mode = 2
+
+[node name="ItemSlot9" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("8_53d1y")]
+layout_mode = 2
+
+[node name="ItemSlot10" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("8_53d1y")]
+layout_mode = 2
+
+[node name="ItemSlot11" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("8_53d1y")]
+layout_mode = 2
+
+[node name="ItemSlot12" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("8_53d1y")]
+layout_mode = 2
+
+[node name="ItemSlot13" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("8_53d1y")]
+layout_mode = 2
+
+[node name="ItemSlot14" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("8_53d1y")]
+layout_mode = 2
+
+[node name="ItemSlot15" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("8_53d1y")]
+layout_mode = 2
+
+[node name="BottomInventory" type="CanvasLayer" parent="."]
+
+[node name="BottomInventoryGUI" parent="BottomInventory" instance=ExtResource("9_riviu")]
+anchors_preset = 12
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+offset_left = 0.0
+offset_top = -180.0
+offset_right = 0.0
+
+[node name="GridContainer" type="GridContainer" parent="BottomInventory/BottomInventoryGUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -87.0
+offset_top = -33.0
+offset_right = 99.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 5
+
+[node name="ItemSlot" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("8_53d1y")]
+layout_mode = 2
+
+[node name="ItemSlot2" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("8_53d1y")]
+layout_mode = 2
+
+[node name="ItemSlot3" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("8_53d1y")]
+layout_mode = 2
+
+[node name="ItemSlot4" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("8_53d1y")]
+layout_mode = 2
+
+[node name="ItemSlot5" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("8_53d1y")]
+layout_mode = 2

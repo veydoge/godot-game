@@ -8,7 +8,7 @@
 script = ExtResource("2_urxaf")
 name = "Камень"
 texture = ExtResource("4_0evr5")
-maxAmountPrStack = 0
+maxAmountPrStack = 5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1k7j"]
 size = Vector2(60, 56)

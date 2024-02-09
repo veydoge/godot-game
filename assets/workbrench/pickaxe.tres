@@ -9,7 +9,7 @@ script = ExtResource("2_plqoo")
 name = "Кирка"
 description = "Кирка для добываемя камня"
 resource = {
-"Ветки": 2,
+"Ветка": 2,
 "Камень": 2
 }
 texture = ExtResource("3_uss2p")
