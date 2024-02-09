@@ -64,12 +64,12 @@ func _on_buy_pressed():
 		if (neededWood == woodAmount):
 			inventory.removeSlot(woodSlot)
 		else:
-			inventory.slots[inventory.slots.find(woodSlot)].amount -= woodAmount
+			inventory.slots[inventory.slots.find(woodSlot)].amount -= neededWood
 			
 		if (neededStone == stoneAmount):
 			inventory.removeSlot(stoneSlot)
 		else:
-			inventory.slots[inventory.slots.find(stoneSlot)].amount -= stoneAmount
+			inventory.slots[inventory.slots.find(stoneSlot)].amount -= neededStone
 			
 	if hasAllResources:
 		inventory.insert(wb.get_current_item().inventoryItem)

@@ -31,14 +31,56 @@ layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(2097194, 9, 0, 2097198, 9, 0, 1703983, 1, 65536, 1966116, 1, 65536, 1638431, 1, 65536, 1966110, 1, 65536, 1638453, 1, 65536, 1638436, 1, 65536, 2359324, 2, 65536, 2359331, 2, 65536, 1245231, 2, 65536, 1245238, 2, 65536, 2359341, 2, 131072, 2359349, 2, 131072, 1179676, 2, 131072, 1179684, 2, 131072)
 metadata/_edit_group_ = true
 
-[node name="player" parent="." instance=ExtResource("3_2rb2m")]
+[node name="Player" parent="." instance=ExtResource("3_2rb2m")]
 y_sort_enabled = true
+
+[node name="BottomInventory" type="CanvasLayer" parent="."]
+
+[node name="BottomInventoryGUI" parent="BottomInventory" instance=ExtResource("7_cq3mc")]
+anchors_preset = 12
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+offset_left = 0.0
+offset_top = -180.0
+offset_right = 0.0
+
+[node name="GridContainer" type="GridContainer" parent="BottomInventory/BottomInventoryGUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -87.0
+offset_top = -33.0
+offset_right = 99.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 5
+
+[node name="ItemSlot" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
+layout_mode = 2
+
+[node name="ItemSlot2" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
+layout_mode = 2
+
+[node name="ItemSlot3" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
+layout_mode = 2
+
+[node name="ItemSlot4" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
+layout_mode = 2
+
+[node name="ItemSlot5" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
+layout_mode = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 process_mode = 3
 script = ExtResource("4_4iteh")
 
 [node name="InventoryGUI" parent="CanvasLayer" instance=ExtResource("5_7rtr6")]
+visible = false
 offset_left = -92.0
 offset_top = -56.0
 offset_right = 92.0
@@ -95,47 +137,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="ItemSlot15" parent="CanvasLayer/InventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
-layout_mode = 2
-
-[node name="BottomInventory" type="CanvasLayer" parent="."]
-
-[node name="BottomInventoryGUI" parent="BottomInventory" instance=ExtResource("7_cq3mc")]
-anchors_preset = 12
-anchor_left = 0.0
-anchor_top = 1.0
-anchor_right = 1.0
-offset_left = 0.0
-offset_top = -180.0
-offset_right = 0.0
-
-[node name="GridContainer" type="GridContainer" parent="BottomInventory/BottomInventoryGUI"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -87.0
-offset_top = -33.0
-offset_right = 99.0
-offset_bottom = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-columns = 5
-
-[node name="ItemSlot" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
-layout_mode = 2
-
-[node name="ItemSlot2" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
-layout_mode = 2
-
-[node name="ItemSlot3" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
-layout_mode = 2
-
-[node name="ItemSlot4" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
-layout_mode = 2
-
-[node name="ItemSlot5" parent="BottomInventory/BottomInventoryGUI/GridContainer" instance=ExtResource("6_7pu08")]
 layout_mode = 2
 
 [connection signal="closed" from="CanvasLayer/InventoryGUI" to="." method="_on_inventory_gui_closed"]
